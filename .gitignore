@@ -1,0 +1,52 @@
+# Dependencies
+node_modules/
+vendor/
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Build output
+dist/
+build/
+*.egg-info/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Environment & secrets
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+*.crt
+credentials.json
+secrets.yaml
+
+# Logs
+*.log
+logs/
+hooks/logs/*.log
+
+# Financial data (never commit)
+*.csv.encrypted
+*.dat
+ledger-data/
+transaction-dumps/
+pii-exports/
+
+# Temporary
+tmp/
+temp/
+.tmp/
+*.bak
