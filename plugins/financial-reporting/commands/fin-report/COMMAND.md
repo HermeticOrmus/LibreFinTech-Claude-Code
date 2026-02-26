@@ -1,87 +1,168 @@
 # /fin-report
 
-A quick-access command for financial-reporting workflows in Claude Code.
+Generate, validate, and export financial statements. Covers P&L, balance sheet, cash flow, XBRL export, and period-close reconciliation.
 
 ## Trigger
 
-`/fin-report [action] [options]`
+`/fin-report <action> [options]`
 
-## Input
+## Actions
 
-### Actions
-- `analyze` - Analyze existing financial-reporting implementation
-- `generate` - Generate new financial-reporting artifacts
-- `improve` - Suggest improvements to current implementation
-- `validate` - Check implementation against best practices
-- `document` - Generate documentation for financial-reporting artifacts
+- `generate` - Generate financial statements from trial balance data
+- `reconcile` - Run period-end reconciliation checks
+- `export` - Export statements in regulatory format (XBRL, iXBRL, CSV)
+- `validate` - Validate statements for mathematical accuracy and standard compliance
 
-### Options
-- `--context <path>` - Specify the file or directory to operate on
-- `--format <type>` - Output format (markdown, json, yaml)
-- `--verbose` - Include detailed explanations
-- `--dry-run` - Preview changes without applying them
+## Options
+
+- `--period <YYYY-MM>` - Reporting period
+- `--entity <id>` - Legal entity identifier
+- `--framework <gaap|ifrs>` - Accounting framework
+- `--currency <ISO4217>` - Presentation currency
+- `--comparative` - Include prior period comparative figures
+- `--format <xbrl|ixbrl|csv|pdf>` - Export format
 
 ## Process
 
-### Step 1: Context Gathering
-- Read relevant files and configuration
-- Identify the current state of financial-reporting artifacts
-- Determine applicable standards and conventions
+### generate
 
-### Step 2: Analysis
-- Evaluate against fin-reporting-patterns patterns
-- Identify gaps, issues, and opportunities
-- Prioritize findings by impact and effort
+Pulls from the chart of accounts mapping and trial balance to produce financial statements.
 
-### Step 3: Execution
-- Apply the requested action
-- Generate or modify artifacts as needed
-- Validate changes against requirements
+```sql
+-- P&L generation from trial balance
+-- Assumes COA has report_line mapping to standard P&L structure
+WITH trial_balance AS (
+    SELECT
+        a.account_code,
+        a.account_name,
+        a.account_type,
+        a.report_line,     -- Maps to P&L line: 'revenue', 'cogs', 'opex', etc.
+        a.report_order,
+        SUM(
+            CASE
+                WHEN je.debit_credit = 'D' THEN je.amount
+                ELSE -je.amount
+            END
+        ) AS net_balance
+    FROM accounts a
+    JOIN journal_entry_lines jel ON jel.account_id = a.id
+    JOIN journal_entries je ON je.id = jel.journal_entry_id
+    WHERE je.period = :period
+      AND je.entity_id = :entity_id
+      AND je.status = 'POSTED'
+    GROUP BY a.account_code, a.account_name, a.account_type, a.report_line, a.report_order
+),
+pl_lines AS (
+    SELECT
+        report_line,
+        report_order,
+        SUM(net_balance) AS line_total
+    FROM trial_balance
+    WHERE account_type IN ('REVENUE', 'EXPENSE', 'COGS')
+    GROUP BY report_line, report_order
+)
+SELECT
+    report_line,
+    line_total,
+    SUM(line_total) OVER (ORDER BY report_order ROWS UNBOUNDED PRECEDING) AS cumulative
+FROM pl_lines
+ORDER BY report_order;
 
-### Step 4: Output
-- Present results in the requested format
-- Include actionable next steps
-- Flag any items requiring human decision
-
-## Output
-
-### Success
+-- Balance sheet validation: Assets must equal Liabilities + Equity
+SELECT
+    SUM(CASE WHEN account_type = 'ASSET' THEN net_balance ELSE 0 END) AS total_assets,
+    SUM(CASE WHEN account_type IN ('LIABILITY', 'EQUITY') THEN net_balance ELSE 0 END) AS total_liabilities_equity,
+    SUM(CASE WHEN account_type = 'ASSET' THEN net_balance ELSE 0 END) -
+    SUM(CASE WHEN account_type IN ('LIABILITY', 'EQUITY') THEN net_balance ELSE 0 END) AS out_of_balance
+FROM trial_balance;
+-- out_of_balance must be 0.00. Any non-zero value = data integrity error.
 ```
-## Financial Reporting - [Action] Complete
 
-### Changes Made
-- [List of changes]
+### reconcile
 
-### Validation
-- [Checks passed]
+```sql
+-- Check all sub-ledger totals match GL control accounts
+-- Accounts Receivable reconciliation
+SELECT
+    'AR_RECON' AS check_name,
+    gl.gl_balance,
+    ar.subledger_balance,
+    gl.gl_balance - ar.subledger_balance AS difference
+FROM (
+    SELECT SUM(net_balance) AS gl_balance
+    FROM trial_balance
+    WHERE account_code = '1200'  -- AR control account
+) gl,
+(
+    SELECT SUM(outstanding_amount) AS subledger_balance
+    FROM ar_invoices
+    WHERE status NOT IN ('PAID', 'VOIDED')
+      AND entity_id = :entity_id
+) ar;
+-- difference must be 0. Non-zero = unposted AR transactions or data mismatch.
 
-### Next Steps
-- [Recommended follow-up actions]
+-- FX rate validation: ensure all transactions in foreign currencies
+-- have rates that match the official rate source for the period
+SELECT
+    transaction_date,
+    currency_pair,
+    applied_rate,
+    official_rate,
+    ABS(applied_rate - official_rate) / official_rate * 100 AS variance_pct
+FROM fx_rate_audit
+WHERE period = :period
+  AND ABS(applied_rate - official_rate) / official_rate > 0.001  -- >0.1% variance
+ORDER BY variance_pct DESC;
 ```
 
-### Error
-```
-## Financial Reporting - [Action] Failed
+### export (XBRL)
 
-### Issue
-[Description of the problem]
+```xml
+<!-- Sample iXBRL fragment for US-GAAP 10-K revenue disclosure -->
+<ix:nonFraction
+  name="us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax"
+  contextRef="FY2024"
+  unitRef="USD"
+  decimals="-3"
+  format="ixt:num-dot-decimal">
+    125,450
+</ix:nonFraction>
 
-### Suggested Fix
-[How to resolve the issue]
+<!-- Context definition for annual period -->
+<xbrli:context id="FY2024">
+  <xbrli:entity>
+    <xbrli:identifier scheme="http://www.sec.gov/CIK">0001234567</xbrli:identifier>
+  </xbrli:entity>
+  <xbrli:period>
+    <xbrli:startDate>2024-01-01</xbrli:startDate>
+    <xbrli:endDate>2024-12-31</xbrli:endDate>
+  </xbrli:period>
+</xbrli:context>
 ```
+
+### validate
+
+Automated validation checks before submission:
+
+- Balance sheet balances (Assets = L + E, tolerance: 0)
+- Cash flow reconciliation (closing cash = opening + net cash flows, tolerance: 0)
+- Prior period comparative figures match prior year filing
+- All mandatory XBRL elements present for the filing type
+- No negative revenue (unless credit note scenario)
+- Retained earnings roll matches: Opening + Net Income - Dividends = Closing
 
 ## Examples
 
 ```bash
-# Analyze current implementation
-/fin-report analyze
+# Generate Q3 2024 P&L for entity E001 in USD (GAAP)
+/fin-report generate --period 2024-09 --entity E001 --framework gaap --currency USD
 
-# Generate new artifacts
-/fin-report generate --context ./src
+# Run period-close reconciliation checks before close
+/fin-report reconcile --period 2024-12 --entity E001
 
-# Validate against best practices
-/fin-report validate --verbose
+# Export full-year 10-K in iXBRL for SEC EDGAR submission
+/fin-report export --period 2024-12 --entity E001 --format ixbrl --framework gaap
 
-# Generate documentation
-/fin-report document --format markdown
+# Validate balance sheet integrity
+/fin-report validate --period 2024-09 --entity E001 --comparative
 ```

@@ -1,87 +1,149 @@
 # /banking-api
 
-A quick-access command for banking-apis workflows in Claude Code.
+Manage Open Banking and bank aggregation API integrations: connect accounts, fetch transaction history, initiate payments, and debug consent flows.
 
 ## Trigger
 
-`/banking-api [action] [options]`
+`/banking-api <action> [options]`
 
-## Input
+## Actions
 
-### Actions
-- `analyze` - Analyze existing banking-apis implementation
-- `generate` - Generate new banking-apis artifacts
-- `improve` - Suggest improvements to current implementation
-- `validate` - Check implementation against best practices
-- `document` - Generate documentation for banking-apis artifacts
+- `connect` - Generate OAuth 2.0 / FAPI authorization flow for a bank connection
+- `accounts` - Fetch and normalize account data from connected institution
+- `transactions` - Retrieve and categorize transactions for a consent
+- `payments` - Initiate a domestic or international payment via PIS
 
-### Options
-- `--context <path>` - Specify the file or directory to operate on
-- `--format <type>` - Output format (markdown, json, yaml)
-- `--verbose` - Include detailed explanations
-- `--dry-run` - Preview changes without applying them
+## Options
+
+- `--provider <plaid|truelayer|tink|finicity|custom>` - Aggregation provider
+- `--standard <uk-ob|nextgenpsd2|stet|cdr>` - Open Banking standard (for custom/direct integration)
+- `--consent-id <id>` - Operate on specific consent object
+- `--account-id <id>` - Scope to specific account
+- `--from <ISO8601>` - Transaction date range start
+- `--to <ISO8601>` - Transaction date range end
+- `--sandbox` - Use provider sandbox environment
 
 ## Process
 
-### Step 1: Context Gathering
-- Read relevant files and configuration
-- Identify the current state of banking-apis artifacts
-- Determine applicable standards and conventions
+### connect
 
-### Step 2: Analysis
-- Evaluate against banking-api-patterns patterns
-- Identify gaps, issues, and opportunities
-- Prioritize findings by impact and effort
+Generates the complete authorization flow. For UK Open Banking (FAPI 1.0 Advanced):
 
-### Step 3: Execution
-- Apply the requested action
-- Generate or modify artifacts as needed
-- Validate changes against requirements
+```typescript
+// Step 1: Create account-access-consent at ASPSP
+const consent = await aspsp.post('/open-banking/v3.1/aisp/account-access-consents', {
+  Data: {
+    Permissions: [
+      'ReadAccountsDetail',
+      'ReadBalances',
+      'ReadTransactionsDetail',
+      'ReadTransactionsCredits',
+      'ReadTransactionsDebits',
+    ],
+    ExpirationDateTime: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000).toISOString(),
+    TransactionFromDateTime: new Date(Date.now() - 365 * 24 * 60 * 60 * 1000).toISOString(),
+  },
+  Risk: {},
+}, { headers: { Authorization: `Bearer ${clientCredentialsToken}` } });
 
-### Step 4: Output
-- Present results in the requested format
-- Include actionable next steps
-- Flag any items requiring human decision
+const consentId = consent.data.Data.ConsentId;
 
-## Output
+// Step 2: Build PKCE authorization request with PAR
+const codeVerifier = generateCodeVerifier(); // 32 random bytes, base64url encoded
+const codeChallenge = base64url(sha256(codeVerifier));
 
-### Success
+const authParams = {
+  response_type: 'code id_token',  // Hybrid flow for FAPI
+  client_id: CLIENT_ID,
+  redirect_uri: REDIRECT_URI,
+  scope: 'openid accounts',
+  state: generateState(),
+  nonce: generateNonce(),
+  code_challenge: codeChallenge,
+  code_challenge_method: 'S256',
+  request: buildSignedJWT({   // Signed request object per FAPI
+    intent_id: consentId,
+  }),
+};
+
+// Step 3: Push authorization request (PAR) - FAPI Advanced requires this
+const parResponse = await aspsp.post('/as/par', authParams);
+const authUrl = `${aspsp.authEndpoint}?request_uri=${parResponse.request_uri}`;
+
+// Redirect user to authUrl
 ```
-## Banking Apis - [Action] Complete
 
-### Changes Made
-- [List of changes]
+### accounts
 
-### Validation
-- [Checks passed]
+After authorization, fetch accounts using the access token:
 
-### Next Steps
-- [Recommended follow-up actions]
+```typescript
+const accounts = await aspsp.get('/open-banking/v3.1/aisp/accounts', {
+  headers: {
+    Authorization: `Bearer ${accessToken}`,
+    'x-fapi-interaction-id': generateUUID(),  // Required by UK OB spec
+    'x-fapi-financial-id': ASPSP_FINANCIAL_ID,
+  },
+});
+
+// Normalize to common format
+const normalized = accounts.data.Data.Account.map(acct => ({
+  id: acct.AccountId,
+  type: acct.AccountType,    // 'Personal', 'Business'
+  subType: acct.AccountSubType,  // 'CurrentAccount', 'Savings'
+  currency: acct.Currency,   // ISO 4217
+  name: acct.Nickname ?? acct.Account[0].Name,
+  sortCode: acct.Account[0]?.SchemeName === 'UK.OBIE.SortCodeAccountNumber'
+    ? acct.Account[0].Identification.slice(0, 6) : null,
+  accountNumber: acct.Account[0]?.SchemeName === 'UK.OBIE.SortCodeAccountNumber'
+    ? acct.Account[0].Identification.slice(6) : null,
+  iban: acct.Account[0]?.SchemeName === 'UK.OBIE.IBAN'
+    ? acct.Account[0].Identification : null,
+}));
 ```
 
-### Error
-```
-## Banking Apis - [Action] Failed
+### payments
 
-### Issue
-[Description of the problem]
+Domestic payment initiation (UK Open Banking PIS):
 
-### Suggested Fix
-[How to resolve the issue]
+```typescript
+// Create domestic payment consent
+const paymentConsent = await aspsp.post(
+  '/open-banking/v3.1/pisp/domestic-payment-consents',
+  {
+    Data: {
+      Initiation: {
+        InstructionIdentification: generateIdempotencyKey(),
+        EndToEndIdentification: referenceId,
+        InstructedAmount: { Amount: '10.00', Currency: 'GBP' },
+        CreditorAccount: {
+          SchemeName: 'UK.OBIE.SortCodeAccountNumber',
+          Identification: '20000319570703',
+          Name: 'John Smith',
+        },
+        RemittanceInformation: { Reference: 'Invoice-12345' },
+      },
+    },
+    Risk: {
+      PaymentContextCode: 'EcommerceGoods',
+    },
+  },
+  { headers: { Authorization: `Bearer ${clientCredentialsToken}` } }
+);
 ```
 
 ## Examples
 
 ```bash
-# Analyze current implementation
-/banking-api analyze
+# Generate Plaid Link token for account connection
+/banking-api connect --provider plaid --sandbox
 
-# Generate new artifacts
-/banking-api generate --context ./src
+# Fetch accounts after UK Open Banking consent
+/banking-api accounts --provider custom --standard uk-ob --consent-id aac-00001
 
-# Validate against best practices
-/banking-api validate --verbose
+# Get last 30 days transactions for specific account
+/banking-api transactions --account-id 22289 --from 2024-10-01 --to 2024-10-31
 
-# Generate documentation
-/banking-api document --format markdown
+# Initiate a domestic GBP payment via UK Open Banking PIS
+/banking-api payments --provider custom --standard uk-ob
 ```
