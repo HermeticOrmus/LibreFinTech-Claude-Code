@@ -1,65 +1,106 @@
-# Advanced Learning Path - Financial Technology
+# Advanced — compliance, scale, and ops
 
-## Overview
+You operate at scale. Now: SOC 2, PCI DSS audit prep, multi-region settlement, custom risk models, regulatory reporting at multiple jurisdictions, live-ops.
 
-This advanced path covers Financial Technology concepts and practices, progressing from fundamentals to practical application with Claude Code plugins.
+## SOC 2
 
-## Prerequisites
+For SaaS or fintech B2B, SOC 2 is table stakes. Auditor checks:
 
-- Completed intermediate path\n- Production financial system experience\n- Understanding of risk management
+- **Security**: access controls, encryption, vulnerability management
+- **Availability**: SLA compliance, incident response, disaster recovery
+- **Processing integrity**: data accuracy, change management
+- **Confidentiality**: data classification, data handling
+- **Privacy** (optional): GDPR/CCPA compliance
 
-## Modules
+**Timeline**: 6-12 months for Type 1 (point-in-time); add 12 months for Type 2 (period-of-time, more credible).
 
-### Module 1: Trading Systems
+**Cost**: audit fees ($30-100k+ depending on scope) + internal time (significant).
 
-#### Concepts
-- Order management systems\n- Matching engine design\n- FIX protocol basics\n- Market data handling\n- Low-latency architecture
+**Auditor expectation**: documented controls, evidence of operation, no major exceptions.
 
-#### Hands-On Exercise
-Apply the concepts using the relevant plugins. Start simple, build complexity gradually.
+## PCI DSS
 
-#### Key Takeaways
-- Understand the fundamentals of Trading Systems
-- Know when to apply these patterns
-- Create basic implementations confidently
+Required for any system that touches card data. Levels:
 
----
+- **Level 1**: > 6M transactions/year. Full audit by QSA (Qualified Security Assessor). ~$50-200k.
+- **Level 2-4**: smaller volumes. SAQ (Self-Assessment Questionnaire) + quarterly ASV scans.
 
-### Module 2: Real-Time Settlement
+**Scope minimization**:
+- Stripe Elements + tokenized methods → SAQ-A (lightest)
+- Server proxies card data → SAQ-D (full audit equivalent)
+- Storage of PAN → highest scope (expensive)
 
-#### Concepts
-- RTGS concepts\n- Clearing and netting\n- Instant payment systems\n- Cross-border payments\n- DLT for settlement
+**Aim for SAQ-A**. Use tokenization everywhere; never let raw card data touch your servers.
 
-#### Hands-On Exercise
-Build on Module 1 with more advanced techniques. Focus on quality and reproducibility.
+## Multi-region settlement
 
-#### Key Takeaways
-- Integrate multiple concepts effectively
-- Apply established best practices
-- Evaluate and improve existing work
+Operating in multiple regions means:
 
----
+- Multi-currency ledger (already covered)
+- Per-region payment provider relationships (Stripe in US/EU; local PSPs in BR/IN/etc.)
+- Per-jurisdiction tax handling (VAT, GST, sales tax)
+- Per-jurisdiction reporting requirements
+- Different settlement cadences per rail
 
-### Module 3: Advanced Risk & Analytics
+**Architecture pattern**: regional sub-ledgers that consolidate to a global ledger via FX events.
 
-#### Concepts
-- Value at Risk (VaR)\n- Stress testing frameworks\n- Portfolio optimization\n- Market risk models\n- Regulatory capital calculations
+## Custom risk models
 
-#### Hands-On Exercise
-Combine everything into a comprehensive project demonstrating full mastery.
+At scale, off-the-shelf fraud detection has ceiling. Custom ML pays off when:
 
-#### Key Takeaways
-- Synthesize all module concepts
-- Make informed architectural decisions
-- Create production-quality implementations
+- Transaction volume > 100k/month
+- You have labeled training data (1k+ chargebacks)
+- You can dedicate an ML engineer
 
-## Assessment
+**Architecture**:
+- Feature pipeline: from transaction event → feature vector
+- Training pipeline: monthly retrain on rolling 90-day window
+- Inference pipeline: real-time (< 100ms p99) scoring
+- A/B testing pipeline: rule changes + model changes evaluated as experiments
 
-- [ ] Complete all module exercises
-- [ ] Build a project combining all concepts
-- [ ] Review against skill file patterns
-- [ ] Identify areas for deeper study
+## Regulatory reporting
 
-## Next Steps
+Per jurisdiction:
 
-You've mastered FinTech development. Consider specializing in trading infrastructure, compliance tech, or DeFi.
+- **US**: FinCEN (BSA, SAR, CTR), state money transmitter licenses, IRS 1099-K for marketplaces
+- **EU**: MiFID II (trading), PSD2 (payments), GDPR (data), per-country tax reporting
+- **UK**: FCA reporting, post-Brexit specifics
+- **AU**: AUSTRAC reporting
+- **CA**: FINTRAC reporting
+
+The reporting is structured + scheduled. Build the reporting pipeline as part of the platform, not as a manual quarterly scramble.
+
+## Live-ops
+
+Financial systems are 24/7. Build:
+
+- **On-call rotation** with clear escalation paths
+- **Runbooks** for known incidents (provider outages, fraud waves, regulatory inquiries)
+- **Telemetry dashboards** for fraud rate, chargeback rate, decline rate, settlement times, reconciliation drift
+- **Alerting** for SLO violations + anomaly detection
+- **Postmortems** for every incident (no blame; collect signal)
+- **Capacity planning** for peak events (Black Friday, regional holidays)
+
+## Read deeper
+
+- [`docs/soc2-prep`](../docs/) — SOC 2 control mapping + evidence collection
+- [`docs/pci-scope-minimization`](../docs/) — keeping PCI scope tight
+- [`docs/multi-region-settlement`](../docs/) — patterns for global ops
+- [`docs/regulatory-reporting`](../docs/) — per-jurisdiction filing requirements
+- [`docs/live-ops-runbooks`](../docs/) — incident response, capacity, alerting
+
+## What's still hard
+
+- **License acquisition**: most fintech requires a license somewhere. The license process is jurisdiction-specific and takes months-to-years. Plan for it from Day 1.
+- **Partnership management**: relationships with payment processors, banks, KYC providers, AML compliance vendors. Each has its own SLA, integration nuances, and renegotiation cycles.
+- **Adversarial adaptation**: fraudsters update tactics. Your detection must update too. Annual red-team exercises.
+- **Cultural challenges**: fintech engineers need to think differently than typical SaaS engineers. Build the culture early.
+
+## Where to go from here
+
+- **Contribute back**: real-world case studies (anonymized) are gold for the community. See [`CONTRIBUTING.md`](../CONTRIBUTING.md).
+- **Deepen specific plugins**: the bundle has 20 plugins; depth varies. The maturity matrix tracks which are depth-complete.
+- **Pair with other Libre-X-Claude-Code repos**:
+  - [`LibreSecOps-Claude-Code`](https://github.com/HermeticOrmus/LibreSecOps-Claude-Code) — security ops practices
+  - [`LibreDevOps-Claude-Code`](https://github.com/HermeticOrmus/LibreDevOps-Claude-Code) — infrastructure patterns
+  - [`LibreUIUX-Claude-Code`](https://github.com/HermeticOrmus/LibreUIUX-Claude-Code) — when your fintech has a customer-facing UI

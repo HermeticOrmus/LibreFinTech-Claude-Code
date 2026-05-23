@@ -1,46 +1,66 @@
 # Ledger Design
 
-Double-entry bookkeeping, ledger architecture, accounts
+> Double-entry bookkeeping for financial systems — balance invariants, event sourcing, immutability, multi-currency, rounding semantics. The accounting layer that catches what payment processors miss.
 
-## What's Included
+## Overview
+
+Every financial system has a ledger, whether explicit or implicit. The implicit ones — "we'll just look at Stripe's dashboard" — fail at scale and during audits. The explicit ones encode money movement as events with invariants that can be verified.
+
+This plugin encodes the patterns for ledgers that:
+
+- Track money correctly under retries, partial failures, and out-of-order events
+- Survive audits (every dollar can be traced)
+- Reconcile against payment providers automatically
+- Handle multi-currency, rounding, and FX correctly
+- Scale to millions of events without losing the audit trail
+
+## Contents
 
 ### Agents
-- **Ledger Architect** - Specialized agent for Double-entry bookkeeping, ledger architecture, accounts
+
+- **ledger-architect** -- Senior financial systems engineer. Designs event-sourced ledgers with double-entry invariants, immutable event tables, materialized balance views. Knows the trade-offs between strict double-entry, simplified single-entry, and modern event-sourced approaches.
 
 ### Commands
-- `/ledger` - Quick-access command for ledger-design workflows
+
+- **/ledger** -- Ledger schema design + invariant enforcement + reconciliation patterns.
 
 ### Skills
-- **Ledger Patterns** - Pattern library and knowledge base for ledger-design
 
-## Quick Start
+- **ledger-design** -- Reference library: double-entry rules, event sourcing patterns, balance materialization, multi-currency handling, common ledger mistakes.
 
-1. Copy this plugin to your Claude Code plugins directory
-2. Use the agent for guided, multi-step workflows
-3. Use the command for quick, targeted operations
-4. Reference the skill for patterns and best practices
+## Key capabilities
 
-## Usage Examples
+- **Double-entry bookkeeping**: every event is a pair (debit one account, credit another); the sum of all debits equals the sum of all credits — the integrity invariant
+- **Event sourcing**: append-only events; balances are derived views; audit trail is the source of truth
+- **Immutability**: events never update or delete; corrections are new compensating events
+- **Multi-currency**: per-currency balances; FX events as their own pair; snapshot rates at execution
+- **Rounding semantics**: integer minor units always; bankers' rounding for half-cent splits; explicit rounding accounts when subtotals don't sum
+- **Materialized balance views**: derived from events; recomputed via projections; cache-friendly
+- **Reconciliation**: ledger vs. external provider (Stripe, bank statement); flag discrepancies for human review
 
-```
-# Use the command directly
-/ledger analyze
+## When to use
 
-# Use the command with specific input
-/ledger generate --context "your project"
+- Designing a new financial system (do this FIRST, before payment integration)
+- Migrating from "spreadsheet" or "dashboard-only" tracking to a real ledger
+- Adding multi-currency to an existing single-currency system
+- Audit preparation (SOC 2, financial reporting)
+- Debugging "balance doesn't match" scenarios
+- Designing dispute / refund / chargeback flows that touch the ledger
 
-# Reference patterns from the skill
-"Apply ledger-patterns patterns to this implementation"
-```
+## When NOT to use
 
-## Key Patterns
+- Read-only analytics (ledger is for state-of-record, not analytics — use a separate analytical DB)
+- Logging (audit trail and logs serve different purposes)
+- Reporting (the ledger is the source; reporting layers on top)
 
-- Follow established conventions for ledger-design
-- Validate inputs before processing
-- Document decisions and rationale
-- Test outputs against requirements
-- Iterate based on feedback
+## Compatibility
 
-## Related Plugins
+- **Databases**: PostgreSQL (preferred for ACID + JSONB), MySQL, CockroachDB (for global), DynamoDB (for high-throughput)
+- **Languages**: Python (with Pydantic), TypeScript, Go, Java
+- **Scale**: from 100s to 10s of millions of events; partitioning patterns covered for the high end
 
-Check the main README for related plugins in this collection.
+## Limitations
+
+- The agent doesn't design GL (general ledger) for full accounting departments — that's a CPA's job, this is the system-of-record below
+- Tax calculations are not part of ledger design; they're a separate concern (see `pricing-engines`)
+- The agent doesn't design the analytical / reporting layer on top — see `financial-reporting`

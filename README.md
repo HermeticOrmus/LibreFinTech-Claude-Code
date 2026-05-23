@@ -1,148 +1,186 @@
 <p align="center">
-  <h1 align="center">LibreFinTech</h1>
-  <p align="center">Claude Code Plugins for Financial Technology Development</p>
+  <img src="https://ormus.solutions/mascot/chain_braces_to_swan.gif" alt="LibreFinTech Claude Code" width="128" style="image-rendering: pixelated;" />
+</p>
+
+<h1 align="center">LibreFinTech Claude Code</h1>
+
+<p align="center">
+  <em>Financial technology development with Claude Code — 20 specialized plugins for payments, ledgers, trading, compliance, and risk</em>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/plugins-20-b58900?style=for-the-badge" alt="20 Plugins">
-  <img src="https://img.shields.io/badge/license-MIT-b58900?style=for-the-badge" alt="MIT License">
-  <img src="https://img.shields.io/badge/claude--code-plugins-b58900?style=for-the-badge" alt="Claude Code">
-  <img src="https://img.shields.io/badge/fintech-ready-b58900?style=for-the-badge" alt="FinTech Ready">
+  <a href="https://github.com/HermeticOrmus/LibreFinTech-Claude-Code/stargazers"><img src="https://img.shields.io/github/stars/HermeticOrmus/LibreFinTech-Claude-Code?style=flat-square&color=aa8142" alt="Stars" /></a>
+  <a href="https://github.com/HermeticOrmus/LibreFinTech-Claude-Code/blob/main/LICENSE"><img src="https://img.shields.io/github/license/HermeticOrmus/LibreFinTech-Claude-Code?style=flat-square&color=aa8142" alt="License" /></a>
+  <a href="https://github.com/HermeticOrmus/LibreFinTech-Claude-Code/commits"><img src="https://img.shields.io/github/last-commit/HermeticOrmus/LibreFinTech-Claude-Code?style=flat-square&color=aa8142" alt="Last Commit" /></a>
+  <img src="https://img.shields.io/badge/FinTech-aa8142?style=flat-square&logo=stripe&logoColor=white" alt="FinTech" />
+  <img src="https://img.shields.io/badge/Claude_Code-aa8142?style=flat-square&logo=anthropic&logoColor=white" alt="Claude Code" />
 </p>
 
 ---
 
-A curated collection of Claude Code plugins for financial technology development. From payment processing to trading systems, ledger design to regulatory compliance, risk management to real-time settlement.
+> **Skills, agents, commands, and workflows for shipping financial technology with Claude Code.**
 
-## Plugin Collection
+FinTech is where wrong code costs real money. A payment processor that double-charges. A ledger that loses a cent in rounding. A fraud system that approves the wrong transaction. Generic LLM coding patterns don't have the domain awareness to catch these. **LibreFinTech gives Claude Code the financial-specific expertise needed to ship systems that handle money correctly.**
 
-| # | Plugin | Domain | Command | Description |
-|---|--------|--------|---------|-------------|
-| 1 | [audit-trails](plugins/audit-trails/) | Compliance | `/audit-trail` | Immutable audit logs, event sourcing, compliance trails |
-| 2 | [banking-apis](plugins/banking-apis/) | Banking | `/banking-api` | Open banking APIs, PSD2, account aggregation |
-| 3 | [cryptocurrency](plugins/cryptocurrency/) | Crypto | `/crypto` | Blockchain integration, wallets, smart contracts, DeFi |
-| 4 | [financial-reporting](plugins/financial-reporting/) | Reporting | `/fin-report` | Financial statements, GAAP/IFRS, automated reporting |
-| 5 | [financial-security](plugins/financial-security/) | Security | `/fin-security` | PCI DSS, encryption, tokenization, secure transactions |
-| 6 | [fraud-detection](plugins/fraud-detection/) | Risk | `/fraud-detect` | Rule engines, ML fraud detection, anomaly scoring |
-| 7 | [insurance-tech](plugins/insurance-tech/) | Insurance | `/insurtech` | Claims processing, underwriting, policy management |
-| 8 | [kyc-aml](plugins/kyc-aml/) | Compliance | `/kyc-aml` | Identity verification, sanctions screening, monitoring |
-| 9 | [ledger-design](plugins/ledger-design/) | Core | `/ledger` | Double-entry bookkeeping, ledger architecture |
-| 10 | [lending-platforms](plugins/lending-platforms/) | Lending | `/lending` | Loan origination, credit scoring, servicing |
-| 11 | [market-data](plugins/market-data/) | Data | `/market-data` | Market data feeds, tick data, OHLCV normalization |
-| 12 | [open-banking](plugins/open-banking/) | Banking | `/open-banking` | Open banking standards, consent management |
-| 13 | [payment-processing](plugins/payment-processing/) | Payments | `/payments` | Payment gateways, Stripe/Adyen, 3DS, billing |
-| 14 | [portfolio-management](plugins/portfolio-management/) | Investment | `/portfolio` | Portfolio construction, rebalancing, allocation |
-| 15 | [pricing-engines](plugins/pricing-engines/) | Pricing | `/pricing` | Dynamic pricing, fee calculation, interest computation |
-| 16 | [real-time-settlement](plugins/real-time-settlement/) | Settlement | `/settlement` | RTGS, instant payments, clearing, netting |
-| 17 | [reconciliation](plugins/reconciliation/) | Operations | `/reconcile` | Transaction reconciliation, matching, exceptions |
-| 18 | [regulatory-compliance](plugins/regulatory-compliance/) | Compliance | `/compliance` | SOX, MiFID II, Dodd-Frank, regulatory reporting |
-| 19 | [risk-management](plugins/risk-management/) | Risk | `/risk` | Market/credit/operational risk, VaR, stress testing |
-| 20 | [trading-systems](plugins/trading-systems/) | Trading | `/trading` | Order management, matching engines, FIX protocol |
+Twenty domain plugins. Three flagship areas depth-complete (payment processing, ledger design, fraud detection). 3-tier learning paths covering compliance, security, and operational reality. The substance you'd expect from a senior fintech engineer.
 
-## Quick Start
+---
 
-### 1. Clone the Repository
+## The shift this kit responds to
+
+Karpathy, December 2025:
+
+> *"I've never felt this much behind as a programmer. The profession is being dramatically refactored."*
+
+For fintech specifically, the refactor is harder than other domains. AI codegen that produces a working webapp can produce a payment system that "works" but silently drops 0.01% of transactions. The cost of wrong is high; the time to discover wrong can be months. **LibreFinTech encodes the patterns that catch these defects at design time.**
+
+### Where LibreFinTech fits in the Claude Code stack
+
+| Claude Code component | LibreFinTech provides |
+|---|---|
+| **Plugins** | 20 fintech subdomain plugins (payments, ledger, trading, compliance, risk, fraud, more) |
+| **Agents** | Specialist agents per plugin (payment engineer, ledger architect, fraud analyst) |
+| **Commands** | Quick-access slash commands per plugin |
+| **Skills** | Pattern libraries (idempotency keys, double-entry invariants, fraud rules) |
+| **Templates** | Webhook handlers, ledger schemas, compliance report scaffolds |
+
+---
+
+## The 20 plugins
+
+### Money movement
+
+| Plugin | Agent / Command | What it covers |
+|---|---|---|
+| **payment-processing** ⭐ | `/payments` | Stripe + Adyen + native rails, 3DS, idempotency keys, webhook reliability, refund + chargeback flows, payment retries |
+| **real-time-settlement** | `/settlement` | RTGS, instant payments (FedNow, SEPA Instant, Faster Payments), clearing, netting |
+| **open-banking** | `/open-banking` | PSD2 + Open Banking Standard, consent flows, account aggregation, AISP/PISP roles |
+| **banking-apis** | `/banking-api` | Direct bank integrations, ACH, wire transfers, ledger sync |
+
+### Accounting + ledgers
+
+| Plugin | Agent / Command | What it covers |
+|---|---|---|
+| **ledger-design** ⭐ | `/ledger` | Double-entry bookkeeping, balance invariants, event sourcing, immutability, multi-currency, rounding |
+| **reconciliation** | `/reconcile` | Transaction matching, exception handling, bank statement parsing, settlement reconciliation |
+| **financial-reporting** | `/fin-report` | GAAP / IFRS reporting, trial balance, P&L + balance sheet generation, audit packages |
+| **audit-trails** | `/audit-trail` | Immutable audit logs, event sourcing, compliance trails, chain-of-custody |
+
+### Risk + fraud
+
+| Plugin | Agent / Command | What it covers |
+|---|---|---|
+| **fraud-detection** ⭐ | `/fraud-detect` | Rule engines, ML scoring, anomaly detection, velocity checks, device fingerprinting, dispute defense |
+| **risk-management** | `/risk` | Market / credit / operational risk, VaR, stress testing, capital adequacy |
+| **regulatory-compliance** | `/compliance` | SOX, MiFID II, Dodd-Frank, GDPR for financial data, regulatory reporting cadences |
+| **kyc-aml** | `/kyc-aml` | Identity verification (KYC), sanctions screening (OFAC, EU), ongoing monitoring, transaction monitoring (AML) |
+| **financial-security** | `/fin-security` | PCI DSS scope minimization, encryption at rest + in transit, tokenization, key management, HSM patterns |
+
+### Trading + markets
+
+| Plugin | Agent / Command | What it covers |
+|---|---|---|
+| **trading-systems** | `/trading` | Order management, matching engines, FIX protocol, market connectivity, smart order routing |
+| **market-data** | `/market-data` | Real-time + historical market data, tick data, OHLCV normalization, exchange feeds |
+| **portfolio-management** | `/portfolio` | Portfolio construction, rebalancing, allocation strategies, performance attribution |
+| **pricing-engines** | `/pricing` | Dynamic pricing, fee calculation, interest computation, FX rates, yield curves |
+
+### Specialized verticals
+
+| Plugin | Agent / Command | What it covers |
+|---|---|---|
+| **lending-platforms** | `/lending` | Loan origination, credit scoring, underwriting, servicing, collections |
+| **insurance-tech** | `/insurtech` | Claims processing, underwriting automation, policy management, actuarial models |
+| **cryptocurrency** | `/crypto` | Wallet management, smart contracts, DeFi protocols, custody patterns, chain analysis |
+
+⭐ = depth-complete plugins (substantive expert content). The other 17 are shell-improved (better than templates, deeper in v0.3).
+
+---
+
+## Quick start
 
 ```bash
-git clone https://github.com/HermeticOrmus/LibreFinTech-Claude-Code.git
+git clone https://github.com/HermeticOrmus/LibreFinTech-Claude-Code.git ~/projects/LibreFinTech-Claude-Code
+cd ~/projects/LibreFinTech-Claude-Code
+./setup.sh
 ```
 
-### 2. Copy a Plugin to Your Project
-
-```bash
-# Copy a single plugin
-cp -r LibreFinTech-Claude-Code/plugins/payment-processing/.claude/ your-project/.claude/
-
-# Or symlink for updates
-ln -s /path/to/LibreFinTech-Claude-Code/plugins/ledger-design/.claude/ your-project/.claude/
-```
-
-### 3. Use the FinTech Template
-
-```bash
-cp LibreFinTech-Claude-Code/templates/CLAUDE.md your-project/CLAUDE.md
-```
-
-### 4. Activate Hooks (Optional)
-
-```bash
-cp LibreFinTech-Claude-Code/hooks/*.sh your-project/.claude/hooks/
-chmod 755 your-project/.claude/hooks/*.sh
-```
-
-## Architecture
+Then in any Claude Code session at your fintech project root:
 
 ```
-LibreFinTech-Claude-Code/
-├── plugins/                    # 20 domain-specific plugins
-│   └── {plugin-name}/
-│       ├── README.md           # Plugin documentation
-│       ├── agents/             # Agent definitions (AGENT.md)
-│       ├── commands/           # Slash commands (COMMAND.md)
-│       └── skills/             # Knowledge & patterns (SKILL.md)
-├── hooks/                      # Session lifecycle hooks
-│   ├── session-start.sh        # Financial project detection
-│   ├── pre-tool-use.sh         # PII/data safety checks
-│   └── post-tool-use.sh        # Compliance verification
-├── learning-paths/             # Structured learning progressions
-│   ├── beginner.md             # FinTech fundamentals
-│   ├── intermediate.md         # Integration & risk
-│   └── advanced.md             # Trading & settlement systems
-├── templates/                  # Project templates
-│   └── CLAUDE.md               # FinTech project CLAUDE.md
-└── .github/                    # GitHub community files
+/payments design idempotent payment processing for a marketplace with split payouts, support for refunds + partial refunds, and 3DS challenge flow for EU customers
 ```
 
-### Plugin Anatomy
+See [QUICK_START.md](QUICK_START.md) for the full walkthrough (build a working payment flow with Stripe + idempotency in 30 minutes).
 
-Each plugin provides three components that map to Claude Code's extension model:
+---
 
-- **Agent** (`AGENT.md`) -- Defines a specialist persona with domain expertise, behavioral guidelines, and output conventions. Agents understand the "why" behind financial patterns.
+## Learning paths
 
-- **Command** (`COMMAND.md`) -- Provides a slash command interface for common workflows. Commands define triggers, inputs, processing steps, and expected outputs.
+### Beginner — *"My first fintech feature"*
 
-- **Skill** (`SKILL.md`) -- Encodes domain knowledge as pattern libraries. Skills contain proven patterns, anti-patterns, and references to standards and regulations.
+You've shipped web apps. You're now building something that handles money. The beginner path covers the foundational mindset shifts: idempotency, double-entry, the difference between "transaction succeeded" and "money actually moved."
 
-### Learning Paths
+→ [`learning-paths/beginner.md`](learning-paths/beginner.md)
 
-Three progressive tracks guide developers from FinTech fundamentals through production-grade systems:
+### Intermediate — *"Production fintech without the disasters"*
 
-1. **Beginner** -- Payment basics, ledger concepts, regulatory landscape
-2. **Intermediate** -- Payment integration, risk scoring, KYC/AML workflows
-3. **Advanced** -- Trading systems, real-time settlement, algorithmic pricing
+Your fintech feature is live. Now you need to handle: chargebacks, fraud attempts, reconciliation, regulatory inquiries, multi-currency, FX, partial outages, settlement delays.
 
-### Hooks
+→ [`learning-paths/intermediate.md`](learning-paths/intermediate.md)
 
-Lifecycle hooks add financial-domain safety to every Claude Code session:
+### Advanced — *"Compliance, scale, and ops"*
 
-- **session-start** -- Detects project type, loads relevant compliance frameworks
-- **pre-tool-use** -- Scans for PII exposure, validates data handling
-- **post-tool-use** -- Verifies compliance posture, logs audit events
+You operate at scale. Now: SOC 2, PCI DSS audit prep, multi-region settlement, custom risk models, regulatory reporting at multiple jurisdictions, live-ops for financial systems.
+
+→ [`learning-paths/advanced.md`](learning-paths/advanced.md)
+
+---
+
+## Compatibility
+
+- **Languages covered**: Python, TypeScript, Go, Rust, Java (for high-frequency contexts)
+- **Payment providers covered deeply**: Stripe, Adyen, PayPal, Square, native rails (ACH, SEPA, FedNow, Faster Payments)
+- **Bank API providers**: Plaid, Tink, TrueLayer, Belvo (LatAm), Mono (Africa)
+- **Compliance frameworks**: PCI DSS, SOC 2, ISO 27001, GDPR + CCPA, regional KYC/AML (US BSA, EU AMLD, UK MLR)
+- **Skill level**: experienced web developers entering fintech (most useful) through senior fintech engineers (still useful as a reference)
+
+LibreFinTech makes no calls to external services from within the plugin content itself — the plugins are documentation + prompt-engineering, not runtime middleware.
+
+---
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines. All contributions must align with the project's commitment to empowering developers and rejecting extractive patterns.
+FinTech is wide and jurisdiction-specific. PRs especially welcome for:
 
-## License
+- **Regional patterns**: SEA fintech (PayNow, GrabPay), LATAM fintech (PIX, Mercado Pago, Belvo), African fintech (M-Pesa, Mono, Flutterwave), Indian fintech (UPI, RBI compliance)
+- **Vertical depth**: insurtech is currently light; lending compliance varies wildly by jurisdiction
+- **Compliance translations**: this kit is US/EU-centric; non-Western regulatory regimes under-served
+- **Real war stories**: case studies of fintech systems that broke + how they were fixed (anonymized)
+- **Crypto / DeFi depth**: currently broad-strokes; deeper protocol-specific content welcome
 
-[MIT](LICENSE) -- Copyright (c) 2025-2026 Hermetic Ormus
+See [CONTRIBUTING.md](CONTRIBUTING.md).
 
+---
+
+## Disclaimer
+
+This is documentation and prompt-engineering tooling. **It is not financial advice. It is not legal advice. It is not compliance certification.**
+
+Building fintech systems in regulated jurisdictions requires:
+- Licensed legal counsel
+- Compliance officer or compliance partner
+- Regulatory approval (most jurisdictions require some form)
+- Audit (SOC 2, PCI DSS, etc., as applicable)
+
+This toolkit helps you build correctly; it does not absolve you of the regulatory + legal responsibility for what you ship.
 
 ---
 
 ## Part of the Libre Open-Source Stack for Claude Code
 
-This repository is part of a growing family of open-source toolkits for Claude Code, each focused on a specific lane:
+Family-link footer is appended by the maintainer's cross-link tooling. See [`LibreUIUX-Claude-Code`](https://github.com/HermeticOrmus/LibreUIUX-Claude-Code) and other Libre-X-Claude-Code repos.
 
-- [LibreUIUX-Claude-Code](https://github.com/HermeticOrmus/LibreUIUX-Claude-Code) — UI/UX development (152 agents, 70 plugins, 76 commands, 74 skills)
-- [LibreArch-Claude-Code](https://github.com/HermeticOrmus/LibreArch-Claude-Code) — Software architecture and system design
-- [LibreCopy-Claude-Code](https://github.com/HermeticOrmus/LibreCopy-Claude-Code) — Technical writing and documentation engineering
-- [LibreDevOps-Claude-Code](https://github.com/HermeticOrmus/LibreDevOps-Claude-Code) — DevOps engineering and infrastructure automation
-- [LibreEmbed-Claude-Code](https://github.com/HermeticOrmus/LibreEmbed-Claude-Code) — Embedded systems, firmware, and IoT development
-- [LibreGEO-Claude-Code](https://github.com/HermeticOrmus/LibreGEO-Claude-Code) — AI-search optimization (ChatGPT, Perplexity, Gemini, Google AI Overviews)
-- [LibreGameDev-Claude-Code](https://github.com/HermeticOrmus/LibreGameDev-Claude-Code) — Game development across Godot, Unity, Unreal
-- [LibreMLOps-Claude-Code](https://github.com/HermeticOrmus/LibreMLOps-Claude-Code) — ML engineering and AI operations
-- [LibreMobileDev-Claude-Code](https://github.com/HermeticOrmus/LibreMobileDev-Claude-Code) — Mobile app development (Flutter, React Native, native iOS, native Android)
-- [LibreSecOps-Claude-Code](https://github.com/HermeticOrmus/LibreSecOps-Claude-Code) — Security operations
+## License
 
-Star the family, not just one — that's how the suite stays coherent.
+MIT © 2026 [Diego Bodart](https://github.com/HermeticOrmus) — see [LICENSE](LICENSE).

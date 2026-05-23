@@ -1,85 +1,130 @@
-# Contributing to LibreFinTech
+# Contributing
 
-Thank you for your interest in contributing to LibreFinTech. This project thrives on community expertise across the diverse domains of financial technology.
+FinTech is wide and jurisdiction-specific. PRs welcome — especially for regional patterns, real-world case studies, and compliance translations beyond the US/EU baseline.
 
-## Core Principle
+## What we welcome
 
-Every contribution must answer "yes" to: **Does this empower developers?**
+- **Bug fixes** in any plugin
+- **Regional fintech patterns**:
+  - SEA: PayNow (SG), GrabPay, Vietnam payment rails, Indonesia QRIS
+  - LATAM: PIX (BR), Mercado Pago, Belvo, dLocal, regional remittance
+  - Africa: M-Pesa, Mono, Flutterwave, Paystack
+  - India: UPI, RBI compliance, NPCI rails
+  - Middle East: Saudi Arabian Monetary Authority, UAE Central Bank rules
+- **Vertical depth**:
+  - Insurtech (current depth is light)
+  - Lending in non-US jurisdictions
+  - Wealth management at scale
+  - Crypto custody (current depth is broad-strokes)
+- **Compliance + regulatory translations** beyond US/EU
+- **Real war stories**: anonymized case studies of fintech systems that broke + how they were fixed
+- **Worked code examples** with real provider integrations (Stripe, Plaid, Adyen, PayPal)
 
-We reject dark patterns, surveillance capitalism, addiction mechanics, and extractive design. We build tools that teach, tools that respect autonomy, and tools that create long-term value.
+## What we don't accept
 
-## How to Contribute
+- Patterns that violate regulatory requirements in major jurisdictions
+- Closed-source dependencies in the core plugin content
+- Plugins that require paid services without a free-tier alternative
+- "Trust me" code without explainable reasoning
+- AI-generated content with no real-fintech verification
 
-### Improving Existing Plugins
+## What this kit is NOT
 
-1. Fork the repository
-2. Create a branch: `feature/plugin-name-improvement` or `fix/plugin-name-issue`
-3. Make your changes
-4. Submit a pull request
+- **Legal advice**. Compliance with financial regulation is the operator's responsibility.
+- **A compliance certification**. SOC 2, PCI DSS, ISO 27001 require auditors.
+- **A replacement for licensed expertise**. Licensed payment processors, regulated bank charters, FINRA-licensed broker-dealers — these are required for what they're required for.
 
-### Adding a New Plugin
+The kit helps you write code that handles money correctly. The legal + regulatory layer is separate.
 
-New plugins must include all four files:
+## Setup
+
+```bash
+git clone https://github.com/<your-username>/LibreFinTech-Claude-Code.git
+cd LibreFinTech-Claude-Code
+./setup.sh
+```
+
+## Branch + PR workflow
 
 ```
-plugins/{plugin-name}/
-├── README.md           # 50-80 lines, description + examples
-├── agents/
-│   └── {name}/AGENT.md # 80-150 lines, identity + expertise + behavior
-├── commands/
-│   └── {name}/COMMAND.md # 60-100 lines, trigger + process + output
-└── skills/
-    └── {name}/SKILL.md  # 60-100 lines, patterns + anti-patterns
+git checkout -b feat/<slug>      # new plugin or major content
+git checkout -b fix/<slug>       # bug fix
+git checkout -b deepen/<plugin>  # deepening a shell plugin
+git checkout -b region/<plugin>  # adding regional variant
+git checkout -b casestudy/<slug> # real-world case study (anonymized)
 ```
 
-### Plugin Quality Checklist
+Commit format: `type(scope): description` (e.g., `deepen(kyc-aml): add OFAC SDN list integration patterns`).
 
-- [ ] Agent has a clear identity, defined expertise areas, and behavioral guidelines
-- [ ] Command has explicit trigger syntax, input requirements, and output format
-- [ ] Skill includes both patterns and anti-patterns with rationale
-- [ ] README includes practical examples
-- [ ] All regulatory references cite specific standards (not vague allusions)
-- [ ] Code examples compile or run without modification
-- [ ] No PII, credentials, or sensitive data in examples
+PR template:
 
-### Updating Learning Paths
+```markdown
+## Why
+<motivation in 1-3 sentences>
 
-Learning paths should remain practical and progressive. When adding content:
+## What changed
+<bulleted list>
 
-- Beginner: Concepts a developer new to FinTech needs on day one
-- Intermediate: Patterns for production integration work
-- Advanced: Architecture for high-throughput, regulated systems
+## How to verify
+<scenario to pose to the agent + expected response>
 
-### Improving Hooks
+## Real-world verification (if applicable)
+<which payment provider, which jurisdiction, which compliance regime>
 
-Hooks must remain POSIX-compatible and fast (under 500ms execution). Test on both Linux and macOS.
+## Regulatory considerations
+<any compliance/legal implications callers should be aware of>
 
-## Code Standards
+## Notes
+<follow-ups, related issues>
+```
 
-- **Commit format**: `type(scope): description` (feat, fix, docs, refactor)
-- **Branch naming**: `feature/description`, `fix/description`
-- **Markdown**: ATX headings, fenced code blocks, reference-style links for repeated URLs
-- **Line length**: 100 characters for prose, no limit for tables and code
+## Plugin-authoring conventions
 
-## Review Process
+Each plugin lives in `plugins/<name>/` with three subdirectories:
 
-1. All PRs require at least one review
-2. Plugin PRs are reviewed for technical accuracy in the financial domain
-3. Hooks PRs are reviewed for security implications
-4. Learning path PRs are reviewed for pedagogical progression
+```
+plugins/<name>/
+├── README.md
+├── agents/<name>.md       # specialist agent prompt
+├── commands/<name>.md     # slash command logic
+└── skills/<name>.md       # reference pattern library
+```
 
-## Reporting Issues
+### Agent prompts should include
 
-Use GitHub Issues with the appropriate template. Include:
+- Frontmatter `name:` + `description:`
+- Purpose + core principles
+- Domain-specific failure modes named explicitly
+- Real provider grounding (Stripe / Adyen / PayPal / regional rail names)
+- Regulatory grounding where applicable (PCI scope, PSD2, AML triggers)
+- 150-300 lines of substantive content
 
-- Which plugin, hook, or learning path is affected
-- What behavior you expected vs. what you observed
-- Your Claude Code version and OS
+### Commands should include
 
-## Code of Conduct
+- Clear job-to-be-done framing
+- Concrete code examples with real provider API names
+- Idempotency + retry + reconciliation patterns where applicable
+- Anti-patterns specific to fintech (storing card data, sync webhook handlers, etc.)
+- 200-400 lines
 
-This project follows the [Contributor Covenant v2.1](CODE_OF_CONDUCT.md). By participating, you agree to uphold a respectful, inclusive environment.
+### Skills should include
+
+- Pattern library, not tutorial
+- Common fintech mistakes catalog
+- Regulatory considerations per pattern
+- Cross-references to other plugins
+- 100-200 lines
+
+## The substance bar
+
+LibreFinTech's flagship plugins (`payment-processing`, `ledger-design`, `fraud-detection`) match LibreUIUX-Claude-Code substance — real provider expertise, real code, real regulatory grounding. New contributions should aim for that depth.
+
+The CHANGELOG maturity matrix tracks which plugins are depth-complete vs. shell-improved.
+
+## Code of conduct
+
+See [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
 
 ## License
 
-By contributing, you agree that your contributions will be licensed under the MIT License.
+MIT. By submitting a PR you agree your contribution is licensed under MIT. No CLA.
