@@ -35,7 +35,7 @@ The pack is English only. If you want to translate the README, QUICK_START or a 
 
 ### Share what you built
 
-Built a payment flow, a ledger or a plugin with this pack? Share it in [Discussions](https://github.com/HermeticOrmus/LibreFinTech-Claude-Code/discussions) under Show and tell if they are enabled on this repo, or in a [feedback issue](https://github.com/HermeticOrmus/LibreFinTech-Claude-Code/issues/new?template=feedback.yml). Anonymized war stories are how the Menu learns what to build next.
+Built a payment flow, a ledger or a plugin with this pack? Share it in [Discussions](https://github.com/HermeticOrmus/LibreFinTech-Claude-Code/discussions/categories/show-and-tell) under Show and tell.com/HermeticOrmus/LibreFinTech-Claude-Code/issues/new?template=feedback.yml). Anonymized war stories are how the Menu learns what to build next.
 
 ### Test your change locally
 
