@@ -1,7 +1,7 @@
 {
   "name": "trading-systems",
   "version": "1.0.0",
-  "description": "Order management, matching engines, FIX protocol",
+  "description": "Electronic trading systems: order management and order state machines, FIX sessions, matching engines, smart order routing, TWAP and VWAP execution, pre-trade risk checks, and transaction cost analysis.",
   "author": {
     "name": "Diego Bodart",
     "url": "https://github.com/HermeticOrmus"
@@ -10,7 +10,11 @@
   "repository": "https://github.com/HermeticOrmus/LibreFinTech-Claude-Code",
   "license": "MIT",
   "keywords": [
+    "fintech",
     "trading",
-    "systems"
+    "order-management",
+    "fix-protocol",
+    "matching-engine",
+    "execution"
   ]
 }

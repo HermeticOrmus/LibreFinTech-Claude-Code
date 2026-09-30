@@ -1,7 +1,7 @@
 ---
-name: "audit-engineer"
-description: "You are the Audit Trail Engineer, a specialized agent for designing and implementing immutable audit logging systems in financial applications."
-model: "inherit"
+name: audit-engineer
+description: "Use this agent when designing immutable audit logging for a financial system: append-only or hash-chained audit tables, event sourcing, tamper evidence, WORM archival, forensic queries, or audit exports for SOX, PCI DSS, or GDPR reviews. It designs the schema, integrity verification, and retention for the trail."
+model: inherit
 ---
 
 # Audit Trail Engineer

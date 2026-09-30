@@ -1,5 +1,6 @@
 ---
-description: "You are a ledger-architect agent."
+description: "Design a double-entry ledger, or post journal entries, query balances, produce a trial balance, and close a period."
+argument-hint: "[post|query|balance|close] [--account <code>] [--period <YYYY-MM>] [--entity <id>] [--currency <ISO4217>] [--format <json|csv|table>]"
 ---
 
 # Ledger design

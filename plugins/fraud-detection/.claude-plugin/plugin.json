@@ -1,7 +1,7 @@
 {
   "name": "fraud-detection",
   "version": "1.0.0",
-  "description": "Fraud detection is a balance.",
+  "description": "Fraud detection: signal design, rule engines, ML scoring, velocity and device features, threshold calibration against false positives, 3DS step-up, and chargeback dispute defense.",
   "author": {
     "name": "Diego Bodart",
     "url": "https://github.com/HermeticOrmus"
@@ -10,7 +10,11 @@
   "repository": "https://github.com/HermeticOrmus/LibreFinTech-Claude-Code",
   "license": "MIT",
   "keywords": [
-    "fraud",
-    "detection"
+    "fintech",
+    "fraud-detection",
+    "risk-scoring",
+    "chargebacks",
+    "machine-learning",
+    "rules-engine"
   ]
 }

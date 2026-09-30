@@ -1,6 +1,6 @@
 ---
-name: "reconciliation-patterns"
-description: "Domain-specific patterns for transaction matching, break management, and reconciliation controls in financial systems."
+name: reconciliation-patterns
+description: "Reconciliation code: multi-pass matching with confidence scores, one-to-many matching for aggregated settlements, a break escalation state machine, and an MT940 and camt.053 parser, plus anti-patterns such as writing breaks off. Use when building matching or break management."
 ---
 
 # Reconciliation Patterns

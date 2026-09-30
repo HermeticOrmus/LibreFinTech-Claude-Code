@@ -1,6 +1,6 @@
 ---
-name: "lending-patterns"
-description: "Domain-specific patterns for loan origination, amortization, credit decisioning, collections compliance, and regulatory disclosure."
+name: lending-patterns
+description: "Lending code: actuarial amortization, daily simple-interest accrual, delinquency buckets with reserve provisioning, and APR disclosure calculation, plus anti-patterns such as compound versus simple interest confusion. Use when implementing loan math, servicing, or collections."
 ---
 
 # Lending Patterns

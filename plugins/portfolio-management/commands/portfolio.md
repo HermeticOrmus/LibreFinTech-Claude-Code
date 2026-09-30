@@ -1,5 +1,6 @@
 ---
-description: "Portfolio analysis, rebalancing, performance attribution, and GIPS-compliant reporting."
+description: "Analyze, rebalance, attribute performance for, or report on a portfolio."
+argument-hint: "<analyze|rebalance|attribute|report> [--portfolio-id <id>] [--benchmark <id|ticker>] [--from <ISO8601>] [--to <ISO8601>] [--tax-aware] [--threshold <float>]"
 ---
 
 # /portfolio

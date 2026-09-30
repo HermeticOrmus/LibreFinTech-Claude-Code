@@ -1,5 +1,6 @@
 ---
-description: "Manage financial security operations: PCI compliance audits, PAN tokenization, key rotation, and sensitive data scanning."
+description: "Audit PCI scope, tokenize card data, rotate encryption keys, or scan for exposed sensitive data."
+argument-hint: "<audit|tokenize|rotate-keys|scan> [--pci-level <1|2|3|4>] [--saq-type <a|a-ep|b|b-ip|c|c-vt|d>] [--tokenization-method <vault|fpe>] [--key-type <dek|kek|tmk>] [--path <dir>]"
 ---
 
 # /fin-security

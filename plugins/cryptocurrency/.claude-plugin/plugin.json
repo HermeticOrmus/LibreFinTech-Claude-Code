@@ -1,7 +1,7 @@
 {
   "name": "cryptocurrency",
   "version": "1.0.0",
-  "description": "Blockchain integration, wallet management, smart contracts",
+  "description": "Blockchain integration: HD wallets, key custody, transaction signing, Ethereum and Bitcoin, ERC-20 transfers, Safe multisig, gas estimation, and DeFi protocol calls.",
   "author": {
     "name": "Diego Bodart",
     "url": "https://github.com/HermeticOrmus"
@@ -10,6 +10,11 @@
   "repository": "https://github.com/HermeticOrmus/LibreFinTech-Claude-Code",
   "license": "MIT",
   "keywords": [
-    "cryptocurrency"
+    "fintech",
+    "crypto",
+    "blockchain",
+    "wallets",
+    "ethereum",
+    "bitcoin"
   ]
 }

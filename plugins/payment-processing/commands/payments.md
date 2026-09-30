@@ -1,5 +1,6 @@
 ---
-description: "You are a payment-engineer agent with deep Stripe, Adyen, and native-rail expertise."
+description: "Design an idempotent payment integration, or build charge, refund, dispute, and reconciliation report flows."
+argument-hint: "[charge|refund|dispute|report] [--provider <stripe|adyen|braintree>] [--payment-id <id>] [--amount <integer>] [--currency <ISO4217>] [--idempotency-key <key>] [--capture-method <automatic|manual>]"
 ---
 
 # Payment processing design

@@ -1,5 +1,6 @@
 ---
-description: "Fee calculation, interest computation, derivatives pricing, and premium rating."
+description: "Calculate fees, interest, option prices, or insurance premiums with explicit precision and day-count rules."
+argument-hint: "<fee|interest|option|premium> [--product <loan|option|insurance|fx|subscription>] [--principal <amount>] [--rate <decimal>] [--day-count <ACT/360|ACT/365|30/360|ACT/ACT>] [--strike <amount>] [--vol <decimal>]"
 ---
 
 # /pricing

@@ -1,6 +1,6 @@
 ---
-name: "fin-security-patterns"
-description: "Domain-specific patterns for PCI DSS compliance, payment data protection, key management, and financial system security architecture."
+name: fin-security-patterns
+description: "Security code: PCI scope reduction with a hosted payment page, field-level encryption under a KMS key hierarchy, TLS hardening for financial APIs, and HSM key ceremony documentation, plus anti-patterns such as stored PANs and shared tenant keys. Use when protecting cardholder or financial data."
 ---
 
 # Financial Security Patterns

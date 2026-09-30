@@ -1,6 +1,6 @@
 ---
-name: "crypto-patterns"
-description: "Domain-specific patterns for blockchain integration, wallet management, smart contract interaction, and DeFi."
+name: crypto-patterns
+description: "Crypto code: HD wallet derivation with secure randomness, EIP-1559 gas estimation, safe ERC-20 transfers, Safe multisig transactions, and private mempool MEV protection, plus key-handling anti-patterns. Use when writing wallet, signing, or contract interaction code."
 ---
 
 # Crypto Patterns

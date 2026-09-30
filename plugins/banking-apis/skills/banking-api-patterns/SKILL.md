@@ -1,6 +1,6 @@
 ---
-name: "banking-api-patterns"
-description: "Domain-specific patterns for Open Banking integrations, PSD2 compliance, and bank API security."
+name: banking-api-patterns
+description: "Bank API code: PSD2 SCA, the FAPI 1.0 Advanced profile, a consent state machine, and Plaid integration with webhook-driven updates, plus anti-patterns such as stored bank credentials and missing refresh token rotation. Use when integrating Open Banking or aggregation APIs."
 ---
 
 # Banking API Patterns

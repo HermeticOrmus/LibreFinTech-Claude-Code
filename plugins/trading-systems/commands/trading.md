@@ -1,5 +1,6 @@
 ---
-description: "Trading system operations: order submission, execution monitoring, OMS state management, and post-trade analysis."
+description: "Submit or cancel orders, check order status, or run post-trade transaction cost analysis."
+argument-hint: "<order|cancel|status|tca> [--symbol <ticker|isin>] [--side <buy|sell>] [--quantity <int>] [--order-type <market|limit|stop|ioc|fok>] [--price <decimal>] [--algo <twap|vwap|is|pov>] [--venue <MIC>]"
 ---
 
 # /trading

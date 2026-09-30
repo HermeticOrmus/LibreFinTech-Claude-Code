@@ -1,7 +1,7 @@
 {
   "name": "financial-security",
   "version": "1.0.0",
-  "description": "PCI DSS, encryption, tokenization, secure transactions",
+  "description": "Financial data security: PCI DSS scope reduction, card number tokenization, KMS and HSM key hierarchies, field-level encryption, TLS hardening, and sensitive data scanning.",
   "author": {
     "name": "Diego Bodart",
     "url": "https://github.com/HermeticOrmus"
@@ -10,7 +10,11 @@
   "repository": "https://github.com/HermeticOrmus/LibreFinTech-Claude-Code",
   "license": "MIT",
   "keywords": [
-    "financial",
-    "security"
+    "fintech",
+    "security",
+    "pci-dss",
+    "tokenization",
+    "encryption",
+    "key-management"
   ]
 }

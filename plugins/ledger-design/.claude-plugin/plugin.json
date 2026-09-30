@@ -1,7 +1,7 @@
 {
   "name": "ledger-design",
   "version": "1.0.0",
-  "description": "Every financial system has a ledger, whether explicit or implicit.",
+  "description": "Double-entry ledger design: account taxonomy, immutable journal events, balance invariants, materialized balances, compensating corrections, multi-currency and rounding, and reconciliation.",
   "author": {
     "name": "Diego Bodart",
     "url": "https://github.com/HermeticOrmus"
@@ -10,7 +10,11 @@
   "repository": "https://github.com/HermeticOrmus/LibreFinTech-Claude-Code",
   "license": "MIT",
   "keywords": [
+    "fintech",
     "ledger",
-    "design"
+    "double-entry",
+    "accounting",
+    "event-sourcing",
+    "multi-currency"
   ]
 }

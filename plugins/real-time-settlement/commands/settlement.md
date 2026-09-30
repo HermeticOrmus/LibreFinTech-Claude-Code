@@ -1,5 +1,6 @@
 ---
-description: "Real-time payment settlement: submit to RTGS, monitor position, reconcile confirmations, and manage payment queues."
+description: "Submit a payment to an RTGS or instant rail, check its status, monitor positions, or reconcile confirmations."
+argument-hint: "<submit|status|position|reconcile> [--rail <fedwire|rtp|fednow|chaps|sepa-instant|fps>] [--payment-id <id>] [--currency <ISO4217>] [--uetr <uuid>] [--priority <urgent|high|normal>] [--value-date <ISO8601>]"
 ---
 
 # /settlement

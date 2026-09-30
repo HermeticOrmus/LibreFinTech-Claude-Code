@@ -1,6 +1,6 @@
 ---
-name: "market-data-patterns"
-description: "Domain-specific patterns for market data ingestion, tick processing, OHLCV normalization, corporate actions adjustment, and time series storage."
+name: market-data-patterns
+description: "Market data code: split-adjusted price series, gap detection against an exchange calendar, outlier detection, and tick-to-OHLCV aggregation, plus anti-patterns such as mixing adjusted and unadjusted prices. Use when cleaning or storing price data."
 ---
 
 # Market Data Patterns

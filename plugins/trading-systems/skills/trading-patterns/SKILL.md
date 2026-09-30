@@ -1,6 +1,6 @@
 ---
-name: "trading-patterns"
-description: "Domain-specific patterns for order management, FIX protocol integration, matching engines, and algorithmic execution."
+name: trading-patterns
+description: "Trading code: an idempotent order state machine, VWAP execution, a price-time priority order book, and FIX sequence number recovery, plus anti-patterns such as reused ClOrdIDs and skipped pre-trade checks. Use when building order management or execution logic."
 ---
 
 # Trading System Patterns

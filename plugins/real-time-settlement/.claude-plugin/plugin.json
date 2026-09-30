@@ -1,7 +1,7 @@
 {
   "name": "real-time-settlement",
   "version": "1.0.0",
-  "description": "RTGS, instant payments, clearing, netting",
+  "description": "Real-time settlement: RTGS and instant payment rails (Fedwire, FedNow, RTP, CHAPS, Faster Payments, SEPA Instant), ISO 20022 messages, netting, nostro liquidity, and settlement finality.",
   "author": {
     "name": "Diego Bodart",
     "url": "https://github.com/HermeticOrmus"
@@ -10,8 +10,11 @@
   "repository": "https://github.com/HermeticOrmus/LibreFinTech-Claude-Code",
   "license": "MIT",
   "keywords": [
-    "real",
-    "time",
-    "settlement"
+    "fintech",
+    "settlement",
+    "rtgs",
+    "instant-payments",
+    "iso-20022",
+    "liquidity"
   ]
 }

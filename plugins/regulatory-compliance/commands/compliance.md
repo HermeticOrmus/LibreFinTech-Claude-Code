@@ -1,5 +1,6 @@
 ---
-description: "Regulatory compliance workflows: gap analysis, control evidence, regulatory reporting, and breach monitoring."
+description: "Run a compliance gap analysis, build a regulatory report, set up breach monitoring, or collect control evidence."
+argument-hint: "<gap-analysis|report|monitor|evidence> [--regulation <mifid2|dodd-frank|sox|gdpr|bsa|pci-dss|basel3>] [--entity-id <id>] [--from <ISO8601>] [--to <ISO8601>] [--report-type <arm|sdr|ctr|sar|ccar>] [--control-id <id>]"
 ---
 
 # /compliance

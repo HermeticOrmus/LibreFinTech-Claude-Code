@@ -1,7 +1,7 @@
 {
   "name": "kyc-aml",
   "version": "1.0.0",
-  "description": "Identity verification, sanctions screening, transaction monitoring",
+  "description": "KYC and AML engineering: risk-based identity verification tiers, sanctions and PEP screening, beneficial-owner resolution, transaction monitoring, perpetual KYC triggers, and SAR and CTR filing workflows.",
   "author": {
     "name": "Diego Bodart",
     "url": "https://github.com/HermeticOrmus"
@@ -10,7 +10,11 @@
   "repository": "https://github.com/HermeticOrmus/LibreFinTech-Claude-Code",
   "license": "MIT",
   "keywords": [
+    "fintech",
     "kyc",
-    "aml"
+    "aml",
+    "sanctions-screening",
+    "identity-verification",
+    "transaction-monitoring"
   ]
 }

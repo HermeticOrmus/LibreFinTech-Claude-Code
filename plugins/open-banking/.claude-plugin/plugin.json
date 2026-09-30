@@ -1,7 +1,7 @@
 {
   "name": "open-banking",
   "version": "1.0.0",
-  "description": "Open banking standards, consent management, API security",
+  "description": "Open Banking protocol work: TPP registration and dynamic client registration, FAPI profiles, the consent lifecycle for account and payment access, and UK Open Banking, Berlin Group NextGenPSD2, and STET specifics.",
   "author": {
     "name": "Diego Bodart",
     "url": "https://github.com/HermeticOrmus"
@@ -10,7 +10,11 @@
   "repository": "https://github.com/HermeticOrmus/LibreFinTech-Claude-Code",
   "license": "MIT",
   "keywords": [
-    "open",
-    "banking"
+    "fintech",
+    "open-banking",
+    "fapi",
+    "consent",
+    "psd2",
+    "tpp"
   ]
 }

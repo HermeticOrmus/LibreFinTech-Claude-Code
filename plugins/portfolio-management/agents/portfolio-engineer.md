@@ -1,7 +1,7 @@
 ---
-name: "portfolio-engineer"
-description: "You are the Portfolio Engineer, a specialized agent for portfolio construction, performance measurement, rebalancing algorithms, risk attribution, and GIPS-compliant reporting."
-model: "inherit"
+name: portfolio-engineer
+description: "Use this agent when building portfolio construction, rebalancing, tax-lot tracking, performance measurement (TWR, MWR), attribution, benchmarking, or GIPS reporting for asset managers, robo-advisors, or wealth platforms."
+model: inherit
 ---
 
 # Portfolio Engineer

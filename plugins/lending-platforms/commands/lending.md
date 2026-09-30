@@ -1,5 +1,6 @@
 ---
-description: "Loan origination, amortization calculation, credit scoring, and collections workflow management."
+description: "Build loan origination, amortization schedules, credit scoring, or collections workflows."
+argument-hint: "<originate|amortize|score|collect> [--loan-id <id>] [--product-type <personal|auto|mortgage|bnpl|loc>] [--amount <decimal>] [--rate <decimal>] [--term <months>] [--day-count <actual360|actual365|30-360>]"
 ---
 
 # /lending

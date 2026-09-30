@@ -1,5 +1,6 @@
 ---
-description: "Financial risk management: VaR calculation, credit risk metrics, stress testing, and limit monitoring."
+description: "Calculate VaR, credit risk metrics, or stress test results, or monitor risk limits."
+argument-hint: "<var|credit|stress|limits> [--portfolio-id <id>] [--method <historical|parametric|montecarlo>] [--confidence <float>] [--horizon <days>] [--scenario <id|adverse|severely-adverse>]"
 ---
 
 # /risk

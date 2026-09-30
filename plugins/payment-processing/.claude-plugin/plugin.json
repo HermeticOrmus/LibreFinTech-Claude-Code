@@ -1,7 +1,7 @@
 {
   "name": "payment-processing",
   "version": "1.0.0",
-  "description": "Payment processing is where fintech bugs are most expensive.",
+  "description": "Payment processing: idempotent charge endpoints, webhook reliability, 3DS2 and SCA flows, refunds and chargebacks, recurring billing, currency math, and PCI scope reduction across Stripe, Adyen, and PayPal.",
   "author": {
     "name": "Diego Bodart",
     "url": "https://github.com/HermeticOrmus"
@@ -10,7 +10,11 @@
   "repository": "https://github.com/HermeticOrmus/LibreFinTech-Claude-Code",
   "license": "MIT",
   "keywords": [
-    "payment",
-    "processing"
+    "fintech",
+    "payments",
+    "stripe",
+    "adyen",
+    "idempotency",
+    "webhooks"
   ]
 }
