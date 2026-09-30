@@ -121,7 +121,7 @@ Grok Build reads the same plugin folders. Add the marketplace, then install any 
 
 ```bash
 grok plugin marketplace add HermeticOrmus/LibreFinTech-Claude-Code
-grok plugin install payment-processing@libre-fintech --trust
+grok plugin install payment-processing@LibreFinTech-Claude-Code --trust
 ```
 
 Grok asks you to trust a plugin before it installs it; `--trust` is that answer. To install one plugin straight from its folder, without the marketplace:
