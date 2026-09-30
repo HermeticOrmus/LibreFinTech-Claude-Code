@@ -23,6 +23,7 @@ No outside voices. Every issue, comment and pull request in the repo is by the m
 - Repo metadata (`gh api repos/HermeticOrmus/LibreFinTech-Claude-Code`), read 2026-09-30: 1 star, 1 fork, Discussions disabled. Stars are not feedback and are recorded only for context.
 - Issues and pull requests, all states (`gh api "repos/HermeticOrmus/LibreFinTech-Claude-Code/issues?state=all"`): #1 (issue, closed), #2 (PR, closed), #3 (issue, open). All three opened by HermeticOrmus, the maintainer. No `feedback`-labeled issues exist.
 - Issue comments (`gh api repos/HermeticOrmus/LibreFinTech-Claude-Code/issues/comments`): 1 comment (5914882849, on #1), by HermeticOrmus.
+- Issue #4 ("Add the templates the README promises", open, label `help wanted`) was opened by HermeticOrmus after the read above. A maintainer issue, not a voice; the queue cites it on the three template atoms.
 - Pull request review comments (`gh api repos/HermeticOrmus/LibreFinTech-Claude-Code/pulls/comments`): none.
 - Discussions (GraphQL `hasDiscussionsEnabled`, `discussions`): disabled, 0 discussions.
 - Forks (`gh api repos/HermeticOrmus/LibreFinTech-Claude-Code/forks`): 1 fork. `gh api repos/HermeticOrmus/LibreFinTech-Claude-Code/compare/main...<fork-owner>:LibreFinTech-Claude-Code:main` reports 0 commits ahead and 18 behind, so it changed nothing and is not a voice.
