@@ -42,6 +42,16 @@ cd ~/projects/LibreFinTech-Claude-Code
 
 Restart Claude Code so it picks up the plugins.
 
+### Install in Grok Build
+
+```bash
+grok plugin marketplace add HermeticOrmus/LibreFinTech-Claude-Code
+grok plugin install payment-processing@libre-fintech --trust
+grok plugin install ledger-design@libre-fintech --trust
+```
+
+Or one plugin straight from its folder: `grok plugin install HermeticOrmus/LibreFinTech-Claude-Code#plugins/payment-processing --trust`. From a clone, `./setup.sh --grok` installs every plugin into Grok Build. `libre-fintech-hooks` uses a hook format Grok Build supports, but it has not been verified in a live Grok session yet.
+
 ## 2. Open Claude Code at your project root
 
 ```bash
