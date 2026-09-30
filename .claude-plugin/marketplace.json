@@ -128,6 +128,12 @@
       "source": "./plugins/trading-systems",
       "description": "Electronic trading systems: order management and order state machines, FIX sessions, matching engines, smart order routing, TWAP and VWAP execution, pre-trade risk checks, and transaction cost analysis.",
       "version": "1.0.0"
+    },
+    {
+      "name": "libre-fintech-hooks",
+      "source": "./plugins/libre-fintech-hooks",
+      "description": "Optional hooks for financial projects: ask before touching keys, env files, credentials, or financial data exports and before destructive or row-deleting commands, warn on empty writes, and note detected payment and ledger context at session start.",
+      "version": "1.0.0"
     }
   ]
 }
