@@ -1,3 +1,8 @@
+---
+name: "trading-patterns"
+description: "Domain-specific patterns for order management, FIX protocol integration, matching engines, and algorithmic execution."
+---
+
 # Trading System Patterns
 
 Domain-specific patterns for order management, FIX protocol integration, matching engines, and algorithmic execution.

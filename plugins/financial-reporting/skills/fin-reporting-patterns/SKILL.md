@@ -1,3 +1,8 @@
+---
+name: "fin-reporting-patterns"
+description: "Domain-specific patterns for financial statement generation, period-end close, regulatory reporting, multi-currency consolidation, and XBRL compliance."
+---
+
 # Financial Reporting Patterns
 
 Domain-specific patterns for financial statement generation, period-end close, regulatory reporting, multi-currency consolidation, and XBRL compliance.

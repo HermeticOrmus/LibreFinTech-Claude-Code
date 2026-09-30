@@ -1,3 +1,8 @@
+---
+name: "ledger-patterns"
+description: "Domain-specific patterns for double-entry ledger design, journal entry management, balance calculation, multi-currency accounting, and period-close procedures."
+---
+
 # Ledger Patterns
 
 Domain-specific patterns for double-entry ledger design, journal entry management, balance calculation, multi-currency accounting, and period-close procedures.

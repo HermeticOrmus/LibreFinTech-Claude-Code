@@ -1,3 +1,8 @@
+---
+name: "pricing-patterns"
+description: "Domain-specific patterns for financial product pricing: fee calculation, interest computation, options pricing, and insurance premium rating."
+---
+
 # Pricing Engine Patterns
 
 Domain-specific patterns for financial product pricing: fee calculation, interest computation, options pricing, and insurance premium rating.

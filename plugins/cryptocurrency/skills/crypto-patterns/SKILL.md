@@ -1,3 +1,8 @@
+---
+name: "crypto-patterns"
+description: "Domain-specific patterns for blockchain integration, wallet management, smart contract interaction, and DeFi."
+---
+
 # Crypto Patterns
 
 Domain-specific patterns for blockchain integration, wallet management, smart contract interaction, and DeFi. Covers key security, transaction construction, and common Ethereum/Bitcoin patterns.

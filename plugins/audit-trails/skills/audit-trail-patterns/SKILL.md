@@ -1,3 +1,8 @@
+---
+name: "audit-trail-patterns"
+description: "Domain-specific patterns for immutable financial audit logging, covering schema design, integrity verification, regulatory compliance, and forensic analysis."
+---
+
 # Audit Trail Patterns
 
 Domain-specific patterns for immutable financial audit logging, covering schema design, integrity verification, regulatory compliance, and forensic analysis.

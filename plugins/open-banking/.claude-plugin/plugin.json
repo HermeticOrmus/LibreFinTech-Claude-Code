@@ -1,0 +1,16 @@
+{
+  "name": "open-banking",
+  "version": "1.0.0",
+  "description": "Open banking standards, consent management, API security",
+  "author": {
+    "name": "Diego Bodart",
+    "url": "https://github.com/HermeticOrmus"
+  },
+  "homepage": "https://github.com/HermeticOrmus/LibreFinTech-Claude-Code",
+  "repository": "https://github.com/HermeticOrmus/LibreFinTech-Claude-Code",
+  "license": "MIT",
+  "keywords": [
+    "open",
+    "banking"
+  ]
+}

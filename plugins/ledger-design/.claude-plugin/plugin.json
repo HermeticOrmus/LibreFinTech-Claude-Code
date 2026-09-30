@@ -1,0 +1,16 @@
+{
+  "name": "ledger-design",
+  "version": "1.0.0",
+  "description": "Every financial system has a ledger, whether explicit or implicit.",
+  "author": {
+    "name": "Diego Bodart",
+    "url": "https://github.com/HermeticOrmus"
+  },
+  "homepage": "https://github.com/HermeticOrmus/LibreFinTech-Claude-Code",
+  "repository": "https://github.com/HermeticOrmus/LibreFinTech-Claude-Code",
+  "license": "MIT",
+  "keywords": [
+    "ledger",
+    "design"
+  ]
+}

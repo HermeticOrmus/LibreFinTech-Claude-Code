@@ -1,3 +1,8 @@
+---
+name: "fin-security-patterns"
+description: "Domain-specific patterns for PCI DSS compliance, payment data protection, key management, and financial system security architecture."
+---
+
 # Financial Security Patterns
 
 Domain-specific patterns for PCI DSS compliance, payment data protection, key management, and financial system security architecture.

@@ -1,0 +1,16 @@
+{
+  "name": "financial-reporting",
+  "version": "1.0.0",
+  "description": "Financial statements, GAAP/IFRS, automated reporting",
+  "author": {
+    "name": "Diego Bodart",
+    "url": "https://github.com/HermeticOrmus"
+  },
+  "homepage": "https://github.com/HermeticOrmus/LibreFinTech-Claude-Code",
+  "repository": "https://github.com/HermeticOrmus/LibreFinTech-Claude-Code",
+  "license": "MIT",
+  "keywords": [
+    "financial",
+    "reporting"
+  ]
+}

@@ -1,3 +1,8 @@
+---
+name: "insurtech-patterns"
+description: "Domain-specific patterns for insurance technology: policy versioning, claims workflow, underwriting engines, reserve calculation, and regulatory compliance."
+---
+
 # InsurTech Patterns
 
 Domain-specific patterns for insurance technology: policy versioning, claims workflow, underwriting engines, reserve calculation, and regulatory compliance.

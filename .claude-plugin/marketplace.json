@@ -1,0 +1,133 @@
+{
+  "name": "libre-fintech",
+  "owner": {
+    "name": "Diego Bodart",
+    "url": "https://github.com/HermeticOrmus"
+  },
+  "metadata": {
+    "description": "Financial technology plugins for Claude Code",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "audit-trails",
+      "source": "./plugins/audit-trails",
+      "description": "Immutable audit logs, event sourcing for finance, compliance",
+      "version": "1.0.0"
+    },
+    {
+      "name": "banking-apis",
+      "source": "./plugins/banking-apis",
+      "description": "Open banking APIs, PSD2, account aggregation",
+      "version": "1.0.0"
+    },
+    {
+      "name": "cryptocurrency",
+      "source": "./plugins/cryptocurrency",
+      "description": "Blockchain integration, wallet management, smart contracts",
+      "version": "1.0.0"
+    },
+    {
+      "name": "financial-reporting",
+      "source": "./plugins/financial-reporting",
+      "description": "Financial statements, GAAP/IFRS, automated reporting",
+      "version": "1.0.0"
+    },
+    {
+      "name": "financial-security",
+      "source": "./plugins/financial-security",
+      "description": "PCI DSS, encryption, tokenization, secure transactions",
+      "version": "1.0.0"
+    },
+    {
+      "name": "fraud-detection",
+      "source": "./plugins/fraud-detection",
+      "description": "Fraud detection is a balance.",
+      "version": "1.0.0"
+    },
+    {
+      "name": "insurance-tech",
+      "source": "./plugins/insurance-tech",
+      "description": "Claims processing, underwriting, policy management",
+      "version": "1.0.0"
+    },
+    {
+      "name": "kyc-aml",
+      "source": "./plugins/kyc-aml",
+      "description": "Identity verification, sanctions screening, transaction monitoring",
+      "version": "1.0.0"
+    },
+    {
+      "name": "ledger-design",
+      "source": "./plugins/ledger-design",
+      "description": "Every financial system has a ledger, whether explicit or implicit.",
+      "version": "1.0.0"
+    },
+    {
+      "name": "lending-platforms",
+      "source": "./plugins/lending-platforms",
+      "description": "Loan origination, credit scoring, servicing, collections",
+      "version": "1.0.0"
+    },
+    {
+      "name": "market-data",
+      "source": "./plugins/market-data",
+      "description": "Market data feeds, tick data, OHLCV, normalization",
+      "version": "1.0.0"
+    },
+    {
+      "name": "open-banking",
+      "source": "./plugins/open-banking",
+      "description": "Open banking standards, consent management, API security",
+      "version": "1.0.0"
+    },
+    {
+      "name": "payment-processing",
+      "source": "./plugins/payment-processing",
+      "description": "Payment processing is where fintech bugs are most expensive.",
+      "version": "1.0.0"
+    },
+    {
+      "name": "portfolio-management",
+      "source": "./plugins/portfolio-management",
+      "description": "Portfolio construction, rebalancing, asset allocation",
+      "version": "1.0.0"
+    },
+    {
+      "name": "pricing-engines",
+      "source": "./plugins/pricing-engines",
+      "description": "Dynamic pricing, fee calculation, interest computation",
+      "version": "1.0.0"
+    },
+    {
+      "name": "real-time-settlement",
+      "source": "./plugins/real-time-settlement",
+      "description": "RTGS, instant payments, clearing, netting",
+      "version": "1.0.0"
+    },
+    {
+      "name": "reconciliation",
+      "source": "./plugins/reconciliation",
+      "description": "Transaction reconciliation, matching algorithms, exceptions",
+      "version": "1.0.0"
+    },
+    {
+      "name": "regulatory-compliance",
+      "source": "./plugins/regulatory-compliance",
+      "description": "SOX, MiFID II, Dodd-Frank, regulatory reporting",
+      "version": "1.0.0"
+    },
+    {
+      "name": "risk-management",
+      "source": "./plugins/risk-management",
+      "description": "Market risk, credit risk, operational risk, VaR, stress testing",
+      "version": "1.0.0"
+    },
+    {
+      "name": "trading-systems",
+      "source": "./plugins/trading-systems",
+      "description": "Order management, matching engines, FIX protocol",
+      "version": "1.0.0"
+    }
+  ]
+}

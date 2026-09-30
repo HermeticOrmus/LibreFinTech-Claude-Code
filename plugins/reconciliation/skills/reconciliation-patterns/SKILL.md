@@ -1,3 +1,8 @@
+---
+name: "reconciliation-patterns"
+description: "Domain-specific patterns for transaction matching, break management, and reconciliation controls in financial systems."
+---
+
 # Reconciliation Patterns
 
 Domain-specific patterns for transaction matching, break management, and reconciliation controls in financial systems.
