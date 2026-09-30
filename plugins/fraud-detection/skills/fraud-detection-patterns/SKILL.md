@@ -1,3 +1,8 @@
+---
+name: "fraud-detection-patterns"
+description: "Domain-specific patterns for real-time fraud scoring, feature engineering, rule engine design, model feedback loops, and false positive management."
+---
+
 # Fraud Detection Patterns
 
 Domain-specific patterns for real-time fraud scoring, feature engineering, rule engine design, model feedback loops, and false positive management.

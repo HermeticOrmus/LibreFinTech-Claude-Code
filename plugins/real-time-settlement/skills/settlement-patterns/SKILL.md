@@ -1,3 +1,8 @@
+---
+name: "settlement-patterns"
+description: "Domain-specific patterns for real-time payment settlement, RTGS integration, instant rails, and liquidity management."
+---
+
 # Settlement Patterns
 
 Domain-specific patterns for real-time payment settlement, RTGS integration, instant rails, and liquidity management.

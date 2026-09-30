@@ -1,3 +1,8 @@
+---
+name: "risk-patterns"
+description: "Domain-specific patterns for market risk, credit risk, operational risk, and stress testing in financial systems."
+---
+
 # Risk Management Patterns
 
 Domain-specific patterns for market risk, credit risk, operational risk, and stress testing in financial systems.

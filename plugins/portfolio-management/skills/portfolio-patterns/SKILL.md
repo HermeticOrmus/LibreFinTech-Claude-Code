@@ -1,3 +1,8 @@
+---
+name: "portfolio-patterns"
+description: "Domain-specific patterns for portfolio construction, rebalancing, performance attribution, and GIPS-compliant reporting."
+---
+
 # Portfolio Management Patterns
 
 Domain-specific patterns for portfolio construction, rebalancing, performance attribution, and GIPS-compliant reporting.

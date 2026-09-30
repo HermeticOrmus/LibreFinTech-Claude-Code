@@ -1,3 +1,8 @@
+---
+name: "lending-patterns"
+description: "Domain-specific patterns for loan origination, amortization, credit decisioning, collections compliance, and regulatory disclosure."
+---
+
 # Lending Patterns
 
 Domain-specific patterns for loan origination, amortization, credit decisioning, collections compliance, and regulatory disclosure.

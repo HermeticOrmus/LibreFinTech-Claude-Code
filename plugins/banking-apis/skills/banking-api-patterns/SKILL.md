@@ -1,3 +1,8 @@
+---
+name: "banking-api-patterns"
+description: "Domain-specific patterns for Open Banking integrations, PSD2 compliance, and bank API security."
+---
+
 # Banking API Patterns
 
 Domain-specific patterns for Open Banking integrations, PSD2 compliance, and bank API security. Covers OAuth flows, consent management, SCA, and aggregation platform integration.

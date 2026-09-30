@@ -1,3 +1,8 @@
+---
+name: "kyc-aml-patterns"
+description: "Domain-specific patterns for identity verification, sanctions screening, transaction monitoring, UBO resolution, and regulatory filing."
+---
+
 # KYC/AML Patterns
 
 Domain-specific patterns for identity verification, sanctions screening, transaction monitoring, UBO resolution, and regulatory filing.

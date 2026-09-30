@@ -1,3 +1,8 @@
+---
+name: "open-banking-patterns"
+description: "Domain-specific patterns for Open Banking integrations, FAPI security, consent lifecycle management, and TPP infrastructure."
+---
+
 # Open Banking Patterns
 
 Domain-specific patterns for Open Banking integrations, FAPI security, consent lifecycle management, and TPP infrastructure.

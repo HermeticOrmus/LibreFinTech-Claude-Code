@@ -1,3 +1,8 @@
+---
+name: "compliance-patterns"
+description: "Domain-specific patterns for financial regulatory controls, reporting automation, monitoring, and audit evidence generation."
+---
+
 # Regulatory Compliance Patterns
 
 Domain-specific patterns for financial regulatory controls, reporting automation, monitoring, and audit evidence generation.

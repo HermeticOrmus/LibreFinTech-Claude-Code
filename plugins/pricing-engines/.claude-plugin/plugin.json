@@ -1,0 +1,16 @@
+{
+  "name": "pricing-engines",
+  "version": "1.0.0",
+  "description": "Dynamic pricing, fee calculation, interest computation",
+  "author": {
+    "name": "Diego Bodart",
+    "url": "https://github.com/HermeticOrmus"
+  },
+  "homepage": "https://github.com/HermeticOrmus/LibreFinTech-Claude-Code",
+  "repository": "https://github.com/HermeticOrmus/LibreFinTech-Claude-Code",
+  "license": "MIT",
+  "keywords": [
+    "pricing",
+    "engines"
+  ]
+}

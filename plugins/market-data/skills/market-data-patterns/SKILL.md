@@ -1,3 +1,8 @@
+---
+name: "market-data-patterns"
+description: "Domain-specific patterns for market data ingestion, tick processing, OHLCV normalization, corporate actions adjustment, and time series storage."
+---
+
 # Market Data Patterns
 
 Domain-specific patterns for market data ingestion, tick processing, OHLCV normalization, corporate actions adjustment, and time series storage.

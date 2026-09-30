@@ -1,0 +1,16 @@
+{
+  "name": "payment-processing",
+  "version": "1.0.0",
+  "description": "Payment processing is where fintech bugs are most expensive.",
+  "author": {
+    "name": "Diego Bodart",
+    "url": "https://github.com/HermeticOrmus"
+  },
+  "homepage": "https://github.com/HermeticOrmus/LibreFinTech-Claude-Code",
+  "repository": "https://github.com/HermeticOrmus/LibreFinTech-Claude-Code",
+  "license": "MIT",
+  "keywords": [
+    "payment",
+    "processing"
+  ]
+}

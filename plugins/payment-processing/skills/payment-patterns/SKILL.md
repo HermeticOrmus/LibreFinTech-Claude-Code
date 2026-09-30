@@ -1,3 +1,8 @@
+---
+name: "payment-patterns"
+description: "Domain-specific patterns for payment gateway integration, idempotent payment handling, 3DS2, webhook processing, and payment reconciliation."
+---
+
 # Payment Processing Patterns
 
 Domain-specific patterns for payment gateway integration, idempotent payment handling, 3DS2, webhook processing, and payment reconciliation.
