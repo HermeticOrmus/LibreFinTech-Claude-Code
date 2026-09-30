@@ -1,0 +1,160 @@
+{
+  "name": "libre-fintech",
+  "owner": {
+    "name": "Diego Bodart",
+    "url": "https://github.com/HermeticOrmus"
+  },
+  "metadata": {
+    "description": "Financial technology development for Claude Code: payments, ledgers, reconciliation, fraud, compliance engineering, risk, trading, and lending. Engineering guidance, not financial, legal, or compliance advice.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "audit-trails",
+      "description": "Immutable audit logging for financial systems: append-only hash-chained tables, event stores, WORM archival, trace correlation, and audit exports for SOX, PCI DSS, and GDPR reviews.",
+      "version": "1.0.0",
+      "category": "developer-tools",
+      "source": "./plugins/audit-trails"
+    },
+    {
+      "name": "banking-apis",
+      "description": "Bank API integration: aggregation and Open Banking providers (Plaid, TrueLayer, Tink, Finicity), OAuth consent flows, FAPI security, SCA, account and transaction data, and payment initiation.",
+      "version": "1.0.0",
+      "category": "developer-tools",
+      "source": "./plugins/banking-apis"
+    },
+    {
+      "name": "cryptocurrency",
+      "description": "Blockchain integration: HD wallets, key custody, transaction signing, Ethereum and Bitcoin, ERC-20 transfers, Safe multisig, gas estimation, and DeFi protocol calls.",
+      "version": "1.0.0",
+      "category": "developer-tools",
+      "source": "./plugins/cryptocurrency"
+    },
+    {
+      "name": "financial-reporting",
+      "description": "Financial reporting engineering: automated P&L, balance sheet, and cash flow generation, period-end close, multi-currency translation, GAAP and IFRS mapping, and XBRL export.",
+      "version": "1.0.0",
+      "category": "developer-tools",
+      "source": "./plugins/financial-reporting"
+    },
+    {
+      "name": "financial-security",
+      "description": "Financial data security: PCI DSS scope reduction, card number tokenization, KMS and HSM key hierarchies, field-level encryption, TLS hardening, and sensitive data scanning.",
+      "version": "1.0.0",
+      "category": "developer-tools",
+      "source": "./plugins/financial-security"
+    },
+    {
+      "name": "fraud-detection",
+      "description": "Fraud detection: signal design, rule engines, ML scoring, velocity and device features, threshold calibration against false positives, 3DS step-up, and chargeback dispute defense.",
+      "version": "1.0.0",
+      "category": "developer-tools",
+      "source": "./plugins/fraud-detection"
+    },
+    {
+      "name": "insurance-tech",
+      "description": "Insurance technology: policy lifecycle and endorsements, quoting and binding, claims intake and reserves, underwriting rule engines, premium rating, reinsurance cessions, and ACORD data.",
+      "version": "1.0.0",
+      "category": "developer-tools",
+      "source": "./plugins/insurance-tech"
+    },
+    {
+      "name": "kyc-aml",
+      "description": "KYC and AML engineering: risk-based identity verification tiers, sanctions and PEP screening, beneficial-owner resolution, transaction monitoring, perpetual KYC triggers, and SAR and CTR filing workflows.",
+      "version": "1.0.0",
+      "category": "developer-tools",
+      "source": "./plugins/kyc-aml"
+    },
+    {
+      "name": "ledger-design",
+      "description": "Double-entry ledger design: account taxonomy, immutable journal events, balance invariants, materialized balances, compensating corrections, multi-currency and rounding, and reconciliation.",
+      "version": "1.0.0",
+      "category": "developer-tools",
+      "source": "./plugins/ledger-design"
+    },
+    {
+      "name": "lending-platforms",
+      "description": "Lending platform engineering: loan origination, credit decisioning, amortization and daily interest accrual, APR disclosure math, servicing, delinquency buckets, and collections workflows.",
+      "version": "1.0.0",
+      "category": "developer-tools",
+      "source": "./plugins/lending-platforms"
+    },
+    {
+      "name": "market-data",
+      "description": "Market data engineering: feed integration, tick storage, OHLCV aggregation, corporate action adjustments, gap and outlier detection, FIX/FAST, and reference data.",
+      "version": "1.0.0",
+      "category": "developer-tools",
+      "source": "./plugins/market-data"
+    },
+    {
+      "name": "open-banking",
+      "description": "Open Banking protocol work: TPP registration and dynamic client registration, FAPI profiles, the consent lifecycle for account and payment access, and UK Open Banking, Berlin Group NextGenPSD2, and STET specifics.",
+      "version": "1.0.0",
+      "category": "developer-tools",
+      "source": "./plugins/open-banking"
+    },
+    {
+      "name": "payment-processing",
+      "description": "Payment processing: idempotent charge endpoints, webhook reliability, 3DS2 and SCA flows, refunds and chargebacks, recurring billing, currency math, and PCI scope reduction across Stripe, Adyen, and PayPal.",
+      "version": "1.0.0",
+      "category": "developer-tools",
+      "source": "./plugins/payment-processing"
+    },
+    {
+      "name": "portfolio-management",
+      "description": "Portfolio management systems: mean-variance construction, drift-based rebalancing, tax-lot tracking and tax-loss harvesting, TWR and MWR performance, attribution, benchmarking, and GIPS reporting.",
+      "version": "1.0.0",
+      "category": "developer-tools",
+      "source": "./plugins/portfolio-management"
+    },
+    {
+      "name": "pricing-engines",
+      "description": "Financial pricing engines: fee and interest calculation with day-count conventions, Black-Scholes pricing and Greeks, volatility surfaces, insurance premium rating, dynamic pricing, and decimal precision.",
+      "version": "1.0.0",
+      "category": "developer-tools",
+      "source": "./plugins/pricing-engines"
+    },
+    {
+      "name": "real-time-settlement",
+      "description": "Real-time settlement: RTGS and instant payment rails (Fedwire, FedNow, RTP, CHAPS, Faster Payments, SEPA Instant), ISO 20022 messages, netting, nostro liquidity, and settlement finality.",
+      "version": "1.0.0",
+      "category": "developer-tools",
+      "source": "./plugins/real-time-settlement"
+    },
+    {
+      "name": "reconciliation",
+      "description": "Transaction reconciliation: matching internal records against bank, custodian, processor, and exchange statements, confidence-scored and one-to-many matching, break classification and escalation, and MT940 and camt.053 parsing.",
+      "version": "1.0.0",
+      "category": "developer-tools",
+      "source": "./plugins/reconciliation"
+    },
+    {
+      "name": "regulatory-compliance",
+      "description": "Compliance engineering for financial systems: SOX control evidence, MiFID II and Dodd-Frank reporting pipelines, GDPR retention, Basel III and BSA reporting, gap analysis, and monitoring feeds.",
+      "version": "1.0.0",
+      "category": "developer-tools",
+      "source": "./plugins/regulatory-compliance"
+    },
+    {
+      "name": "risk-management",
+      "description": "Financial risk systems: VaR and Expected Shortfall, credit risk (PD, LGD, EAD, CECL, IFRS 9), counterparty exposure, operational loss capture, stress testing, and real-time limit monitoring.",
+      "version": "1.0.0",
+      "category": "developer-tools",
+      "source": "./plugins/risk-management"
+    },
+    {
+      "name": "trading-systems",
+      "description": "Electronic trading systems: order management and order state machines, FIX sessions, matching engines, smart order routing, TWAP and VWAP execution, pre-trade risk checks, and transaction cost analysis.",
+      "version": "1.0.0",
+      "category": "developer-tools",
+      "source": "./plugins/trading-systems"
+    },
+    {
+      "name": "libre-fintech-hooks",
+      "description": "Optional hooks for financial projects: ask before touching keys, env files, credentials, or financial data exports and before destructive or row-deleting commands, warn on empty writes, and note detected payment and ledger context at session start.",
+      "version": "1.0.0",
+      "category": "developer-tools",
+      "source": "./plugins/libre-fintech-hooks"
+    }
+  ]
+}
