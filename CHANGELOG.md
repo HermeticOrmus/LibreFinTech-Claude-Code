@@ -7,6 +7,9 @@
 - `pantry/MENU.md`, generated from the newest pantry queue by the menu script, which orders the Goal atoms and names one as up next.
 - Two issue forms with matching labels: `routing-miss`, for when Claude picks the wrong agent or skill, and `plugin-proposal`, for a new plugin, agent, skill or command.
 - A Ways to contribute section in CONTRIBUTING.md (Menu items, routing misses, plugin proposals, translations, sharing builds, and how to test a change locally), and a Contribute section in the README.
+- Grok Build support. Grok Build reads the same plugin folders; `.grok-plugin/marketplace.json`, generated from the Claude manifest by `scripts/sync-grok-manifest.py`, makes the repo a Grok marketplace too (`grok plugin marketplace add HermeticOrmus/LibreFinTech-Claude-Code`). A `grok` CI job fails when that file drifts, validates every plugin with `grok plugin validate`, and installs all 21 into a clean Grok home.
+- `./setup.sh --grok` installs through the Grok Build CLI instead of Claude Code, with the same `--only`, `--list`, and `--uninstall` options.
+- `LEDGER.md`, the kintsugi ledger: every crack the 1.0.0 release found and sealed, with its evidence, and the cracks still open.
 
 ### Fixed
 - The plugin-authoring layout in CONTRIBUTING.md shows `.claude-plugin/plugin.json` and `skills/<name>/SKILL.md`, the layout the pack uses since 1.0.0, instead of `skills/<name>.md`.
