@@ -1,5 +1,16 @@
 # Changelog
 
+## [Unreleased]
+
+### Added
+- A public pantry in `pantry/`: a dated competitor map, X mine, people mine and pantry queue, every row cited, plus templates for the next run.
+- `pantry/MENU.md`, generated from the newest pantry queue by the menu script, which orders the Goal atoms and names one as up next.
+- Two issue forms with matching labels: `routing-miss`, for when Claude picks the wrong agent or skill, and `plugin-proposal`, for a new plugin, agent, skill or command.
+- A Ways to contribute section in CONTRIBUTING.md (Menu items, routing misses, plugin proposals, translations, sharing builds, and how to test a change locally), and a Contribute section in the README.
+
+### Fixed
+- The plugin-authoring layout in CONTRIBUTING.md shows `.claude-plugin/plugin.json` and `skills/<name>/SKILL.md`, the layout the pack uses since 1.0.0, instead of `skills/<name>.md`.
+
 ## [1.0.0] - 2026-09-30
 
 This release makes the pack installable. Before it, `setup.sh` copied folders into `~/.claude/plugins`, where Claude Code does not load plugins from, and the agents and commands sat in a nested layout Claude Code does not read, so none of the 20 plugins loaded. Now every plugin installs through the Claude Code plugin system, and every agent, command, and skill is discovered and routed.
