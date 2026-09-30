@@ -188,7 +188,7 @@ Starred this? Tell us what worked and what is missing: [open a feedback issue](h
 - Pick up work from the [Menu](pantry/MENU.md): each item has a Done-when anyone can check. Open items are also [`[menu]` issues](https://github.com/HermeticOrmus/LibreFinTech-Claude-Code/issues?q=is%3Aopen+label%3Amenu), and starter tasks are under [good first issues](https://github.com/HermeticOrmus/LibreFinTech-Claude-Code/contribute).
 - Claude picked the wrong agent or skill? File a [routing miss](https://github.com/HermeticOrmus/LibreFinTech-Claude-Code/issues/new?template=routing-miss.yml).
 - Want a new plugin, agent, skill or command? Open a [plugin proposal](https://github.com/HermeticOrmus/LibreFinTech-Claude-Code/issues/new?template=plugin-proposal.yml), or tell us in a [feedback issue](https://github.com/HermeticOrmus/LibreFinTech-Claude-Code/issues/new?template=feedback.yml).
-- Show what you built in [Discussions](https://github.com/HermeticOrmus/LibreFinTech-Claude-Code/discussions) (Show and tell) if they are enabled here, or in a feedback issue.
+- Show what you built in [Discussions](https://github.com/HermeticOrmus/LibreFinTech-Claude-Code/discussions/categories/show-and-tell) (Show and tell); ask questions in [Q&A](https://github.com/HermeticOrmus/LibreFinTech-Claude-Code/discussions/categories/q-a).
 - How to claim an item and test your change locally: [CONTRIBUTING.md](CONTRIBUTING.md#ways-to-contribute).
 
 ---
