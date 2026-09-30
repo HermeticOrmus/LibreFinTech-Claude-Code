@@ -95,9 +95,29 @@ For fintech specifically, the refactor is harder than other domains. AI codegen 
 
 ⭐ = depth-complete plugins (substantive expert content). The other 17 are shell-improved (better than templates, deeper in v0.3).
 
+Each plugin ships one agent, one slash command, and one skill: 20 agents, 20 commands, and 20 skills in all. An optional 21st plugin, `libre-fintech-hooks`, adds safety and context hooks (see [below](#optional-hooks)).
+
 ---
 
 ## Quick start
+
+### Install from Claude Code
+
+```
+/plugin marketplace add HermeticOrmus/LibreFinTech-Claude-Code
+/plugin install payment-processing@libre-fintech
+```
+
+Install any other plugin the same way, by the name in the tables above: `/plugin install <plugin>@libre-fintech`. From a terminal, the same thing is:
+
+```bash
+claude plugin marketplace add HermeticOrmus/LibreFinTech-Claude-Code
+claude plugin install payment-processing@libre-fintech
+```
+
+### Install everything with setup.sh
+
+`setup.sh` registers your clone as the `libre-fintech` marketplace and installs every plugin through the Claude Code CLI. `./setup.sh --list` shows the plugins, `./setup.sh --only payment-processing,ledger-design,fraud-detection` installs a subset, and `./setup.sh --uninstall` removes them. It needs `claude` and `jq` on your `PATH`.
 
 ```bash
 git clone https://github.com/HermeticOrmus/LibreFinTech-Claude-Code.git ~/projects/LibreFinTech-Claude-Code
@@ -112,6 +132,14 @@ Then in any Claude Code session at your fintech project root:
 ```
 
 See [QUICK_START.md](QUICK_START.md) for the full walkthrough (build a working payment flow with Stripe + idempotency in 30 minutes).
+
+### Optional hooks
+
+```
+/plugin install libre-fintech-hooks@libre-fintech
+```
+
+`libre-fintech-hooks` asks before Claude reads or writes `.env` files, private keys, keystores, credentials and secrets files, or anything under `ledger-data/`, `transaction-dumps/`, or `pii-exports/`, and before `rm -rf`, `git push --force`, `git reset --hard`, or SQL `DROP`, `TRUNCATE`, and `DELETE FROM` in a shell command. It also warns when a write leaves a file empty, reminds Claude once per session to run the tests after a code change, and notes detected ledger, payments, SDK, and compliance signals at session start. It needs `jq`. A full `./setup.sh` run installs it; `--only` leaves it out unless you name it. Details: [plugins/libre-fintech-hooks](plugins/libre-fintech-hooks/README.md).
 
 ---
 
@@ -146,6 +174,12 @@ You operate at scale. Now: SOC 2, PCI DSS audit prep, multi-region settlement, c
 - **Skill level**: experienced web developers entering fintech (most useful) through senior fintech engineers (still useful as a reference)
 
 LibreFinTech makes no calls to external services from within the plugin content itself — the plugins are documentation + prompt-engineering, not runtime middleware.
+
+---
+
+## Feedback
+
+Starred this? Tell us what worked and what is missing: [open a feedback issue](https://github.com/HermeticOrmus/LibreFinTech-Claude-Code/issues/new?template=feedback.yml). Every piece of feedback gets an answer, and changes that come from it are credited in the release notes.
 
 ---
 

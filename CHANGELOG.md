@@ -1,5 +1,33 @@
 # Changelog
 
+## [1.0.0] - 2026-09-30
+
+This release makes the pack installable. Before it, `setup.sh` copied folders into `~/.claude/plugins`, where Claude Code does not load plugins from, and the agents and commands sat in a nested layout Claude Code does not read, so none of the 20 plugins loaded. Now every plugin installs through the Claude Code plugin system, and every agent, command, and skill is discovered and routed.
+
+### Added
+- `.claude-plugin/marketplace.json` at the root and a `plugin.json` in every plugin: the repo is now the `libre-fintech` marketplace. Install with `/plugin marketplace add HermeticOrmus/LibreFinTech-Claude-Code`, then `/plugin install <plugin>@libre-fintech`.
+- `libre-fintech-hooks`, an optional plugin that wires the pack's hook scripts into Claude Code. It asks before Claude touches `.env` files, private keys, keystores, credentials and secrets files, or the `ledger-data/`, `transaction-dumps/`, and `pii-exports/` folders, and before `rm -rf`, force pushes, hard resets, or SQL `DROP`, `TRUNCATE`, and `DELETE FROM`. It warns when a write leaves a file empty, reminds Claude once per session to run the tests after a code change, and notes detected ledger, payments, SDK, and compliance signals at session start.
+- An `argument-hint` on every command, listing its actions and flags.
+- CI (`.github/workflows/validate.yml`) that validates the marketplace and every plugin, then installs all of them into a clean config, on every push to main and every pull request.
+- A feedback issue form and a Feedback section in the README.
+
+### Changed
+- Agents moved from `agents/<name>/AGENT.md` to `agents/<name>.md`, commands from `commands/<name>/COMMAND.md` to `commands/<name>.md`, and loose skill files into `skills/<name>/SKILL.md`, the layout Claude Code loads. File content is unchanged apart from new frontmatter.
+- Every agent, command, and skill has a routing description that says when to use it. Every plugin has a one-sentence description, the same in `plugin.json` and in the marketplace. Descriptions for the compliance-heavy plugins (`regulatory-compliance`, `kyc-aml`, `financial-security`) state what engineering they do and leave legal and certification decisions with your compliance function, as the README disclaimer already says.
+- Agents use `model: inherit`, so they run on the model you picked. `payment-engineer`, `ledger-architect`, and `fraud-analyst` were pinned to `sonnet` before.
+- `setup.sh` installs through the Claude Code CLI and supports `--list`, `--only`, `--scope`, and `--uninstall`. `--plugins-dir` is still accepted but no longer used.
+- `payment-processing`, `ledger-design`, and `fraud-detection` each carried two generations of every file. The older ones are merged into the current ones: the `payments-engineer` agent into `payment-engineer`, `fraud-engineer` into `fraud-analyst`, the nested `ledger-architect` into the flat one, the older `/payments`, `/ledger`, and `/fraud-detect` command files into the current ones, and the `payment-patterns`, `ledger-patterns`, and `fraud-detection-patterns` skills into `payment-processing`, `ledger-design`, and `fraud-detection`. Every section survived, including the per-action process and examples of each command and the core patterns, anti-patterns, and references of each skill.
+- The repo-level `hooks/` scripts moved into `plugins/libre-fintech-hooks/hooks/` and now read Claude Code's JSON input on stdin. They no longer write log files.
+- QUICK_START, TROUBLESHOOTING, and CONTRIBUTING show the Claude Code install path, check an install with `claude plugin list`, and describe the validation CI runs.
+
+### Fixed
+- None of the plugins loaded after `./setup.sh`. They load now.
+- The hook scripts read `$1` and `$2`, which Claude Code never sets, and were never registered. They run now, once `libre-fintech-hooks` is installed.
+
+### Upgrading from 0.2.0
+- Run `./setup.sh` again (or `/plugin install <plugin>@libre-fintech`), restart Claude Code, then delete the old copies with `rm -rf ~/.claude/plugins/libre-fintech-*`.
+- If you called `payments-engineer`, `fraud-engineer`, `payment-patterns`, `ledger-patterns`, or `fraud-detection-patterns` by name, use `payment-engineer`, `fraud-analyst`, `payment-processing`, `ledger-design`, and `fraud-detection` instead.
+
 ## [0.2.0] — 2026-05-23
 
 Major content depth pass. 20 plugin shells filled with the LibreUIUX template chrome plus three flagship plugins promoted to depth-complete.
