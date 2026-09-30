@@ -1,5 +1,6 @@
 ---
-description: "Manage immutable audit logging for financial systems: generate schemas, verify chain integrity, query audit history, and export for regulatory review."
+description: "Generate an audit log schema, verify chain integrity, query audit history, or export audit records for a regulatory review."
+argument-hint: "<generate|verify|query|export> [--table <name>] [--entity-id <id>] [--from <ISO8601>] [--to <ISO8601>] [--format <csv|jsonld|splunk>] [--regulation <sox|pci|gdpr|all>]"
 ---
 
 # /audit-trail

@@ -1,6 +1,6 @@
 ---
-name: "insurtech-patterns"
-description: "Domain-specific patterns for insurance technology: policy versioning, claims workflow, underwriting engines, reserve calculation, and regulatory compliance."
+name: insurtech-patterns
+description: "Insurance code: policy versioning with an endorsement trail, an FNOL claims workflow with reserve adequacy, a defensible underwriting rule engine, and reinsurance cession tracking, plus anti-patterns such as mutable policy terms. Use when building policy, claims, or underwriting systems."
 ---
 
 # InsurTech Patterns

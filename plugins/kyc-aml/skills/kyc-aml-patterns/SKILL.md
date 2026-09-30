@@ -1,6 +1,6 @@
 ---
-name: "kyc-aml-patterns"
-description: "Domain-specific patterns for identity verification, sanctions screening, transaction monitoring, UBO resolution, and regulatory filing."
+name: kyc-aml-patterns
+description: "KYC and AML code: risk-based KYC tiering, UBO graph traversal, SAR filing automation with tipping-off prevention, and perpetual KYC triggers, plus anti-patterns such as one-time KYC and binary pass or fail decisions. Use when building onboarding checks, screening, or monitoring."
 ---
 
 # KYC/AML Patterns

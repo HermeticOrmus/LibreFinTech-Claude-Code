@@ -1,6 +1,6 @@
 ---
-name: "settlement-patterns"
-description: "Domain-specific patterns for real-time payment settlement, RTGS integration, instant rails, and liquidity management."
+name: settlement-patterns
+description: "Settlement code: idempotent submission keyed by UETR, nostro reservation with rollback, a priority payment queue, and a settlement finality state machine, plus anti-patterns such as treating submission as settlement. Use when building payment submission to real-time rails."
 ---
 
 # Settlement Patterns

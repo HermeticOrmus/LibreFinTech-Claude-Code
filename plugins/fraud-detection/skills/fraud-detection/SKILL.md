@@ -1,6 +1,6 @@
 ---
-name: "fraud-detection"
-description: "Plot the ROC curve (FP rate vs."
+name: fraud-detection
+description: "Fraud detection library: a signal strength matrix, rule patterns, threshold calibration, provider comparison, a dispute evidence checklist, common mistakes, and code for Redis velocity features, impossible travel, explainable rule engines, and model feedback loops. Use when building or tuning fraud rules and scoring."
 ---
 
 # Fraud detection pattern library

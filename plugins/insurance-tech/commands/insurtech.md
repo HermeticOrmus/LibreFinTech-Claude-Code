@@ -1,5 +1,6 @@
 ---
-description: "Insurance technology workflows: quote generation, policy binding, claims processing, and regulatory reporting."
+description: "Generate a quote, bind a policy, process a claim, or produce an insurance regulatory report."
+argument-hint: "<quote|bind|claim|report> [--policy-id <id>] [--claim-id <id>] [--line-of-business <auto|property|liability|health>] [--state <code>] [--format <pdf|acord|xml>]"
 ---
 
 # /insurtech

@@ -1,6 +1,6 @@
 ---
-name: "payment-processing"
-description: "Reference patterns for payment integrations."
+name: payment-processing
+description: "Payments library: idempotency-key patterns, a webhook reliability checklist, Stripe, Adyen, and PayPal quirks, a refund and chargeback decision tree, currency handling, PCI scope reduction, the PaymentIntent state machine, and code for idempotent creation, webhook processing, 3DS2 exemptions, and dunning. Use when building or debugging payment flows."
 ---
 
 # Payment processing pattern library

@@ -1,6 +1,6 @@
 ---
-name: "fin-reporting-patterns"
-description: "Domain-specific patterns for financial statement generation, period-end close, regulatory reporting, multi-currency consolidation, and XBRL compliance."
+name: fin-reporting-patterns
+description: "Reporting code: double-entry checks inside reports, a period-end close sequence, IAS 21 FX translation, and XBRL taxonomy mapping, plus anti-patterns such as hardcoded FX rates and silent rounding. Use when building financial statement or close automation."
 ---
 
 # Financial Reporting Patterns

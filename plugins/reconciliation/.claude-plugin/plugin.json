@@ -1,7 +1,7 @@
 {
   "name": "reconciliation",
   "version": "1.0.0",
-  "description": "Transaction reconciliation, matching algorithms, exceptions",
+  "description": "Transaction reconciliation: matching internal records against bank, custodian, processor, and exchange statements, confidence-scored and one-to-many matching, break classification and escalation, and MT940 and camt.053 parsing.",
   "author": {
     "name": "Diego Bodart",
     "url": "https://github.com/HermeticOrmus"
@@ -10,6 +10,11 @@
   "repository": "https://github.com/HermeticOrmus/LibreFinTech-Claude-Code",
   "license": "MIT",
   "keywords": [
-    "reconciliation"
+    "fintech",
+    "reconciliation",
+    "matching",
+    "breaks",
+    "bank-statements",
+    "camt053"
   ]
 }

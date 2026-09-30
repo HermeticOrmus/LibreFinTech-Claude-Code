@@ -1,5 +1,6 @@
 ---
-description: "Open Banking workflows: TPP registration, consent creation, account data access, and payment initiation."
+description: "Register a TPP, create consents, access account data, or initiate payments against an Open Banking API."
+argument-hint: "<register|consent|accounts|payments> [--aspsp <id>] [--standard <uk-ob|nextgenpsd2|stet>] [--consent-id <id>] [--consent-type <ais|pis|cbpii>] [--sandbox]"
 ---
 
 # /open-banking

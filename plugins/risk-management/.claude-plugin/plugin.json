@@ -1,7 +1,7 @@
 {
   "name": "risk-management",
   "version": "1.0.0",
-  "description": "Market risk, credit risk, operational risk, VaR, stress testing",
+  "description": "Financial risk systems: VaR and Expected Shortfall, credit risk (PD, LGD, EAD, CECL, IFRS 9), counterparty exposure, operational loss capture, stress testing, and real-time limit monitoring.",
   "author": {
     "name": "Diego Bodart",
     "url": "https://github.com/HermeticOrmus"
@@ -10,7 +10,11 @@
   "repository": "https://github.com/HermeticOrmus/LibreFinTech-Claude-Code",
   "license": "MIT",
   "keywords": [
-    "risk",
-    "management"
+    "fintech",
+    "risk-management",
+    "var",
+    "credit-risk",
+    "stress-testing",
+    "limits"
   ]
 }

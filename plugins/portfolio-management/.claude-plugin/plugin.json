@@ -1,7 +1,7 @@
 {
   "name": "portfolio-management",
   "version": "1.0.0",
-  "description": "Portfolio construction, rebalancing, asset allocation",
+  "description": "Portfolio management systems: mean-variance construction, drift-based rebalancing, tax-lot tracking and tax-loss harvesting, TWR and MWR performance, attribution, benchmarking, and GIPS reporting.",
   "author": {
     "name": "Diego Bodart",
     "url": "https://github.com/HermeticOrmus"
@@ -10,7 +10,11 @@
   "repository": "https://github.com/HermeticOrmus/LibreFinTech-Claude-Code",
   "license": "MIT",
   "keywords": [
-    "portfolio",
-    "management"
+    "fintech",
+    "portfolio-management",
+    "rebalancing",
+    "performance-attribution",
+    "wealth-management",
+    "gips"
   ]
 }

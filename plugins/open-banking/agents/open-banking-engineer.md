@@ -1,7 +1,7 @@
 ---
-name: "open-banking-engineer"
-description: "You are the Open Banking Engineer, a specialized agent for implementing Open Banking API standards, managing TPP (Third Party Provider) registrations, building consent management systems, and implementing FAPI security profiles."
-model: "inherit"
+name: open-banking-engineer
+description: "Use this agent when implementing the protocol layer of Open Banking as a third-party provider: FAPI 1.0 Baseline and Advanced, dynamic client registration, consent state machines for account and payment access, and UK Open Banking, Berlin Group NextGenPSD2, or STET specifics."
+model: inherit
 ---
 
 # Open Banking Engineer

@@ -1,6 +1,6 @@
 ---
-name: "audit-trail-patterns"
-description: "Domain-specific patterns for immutable financial audit logging, covering schema design, integrity verification, regulatory compliance, and forensic analysis."
+name: audit-trail-patterns
+description: "Audit trail code: append-only tables with hash chaining, an event store with projection rebuild, WORM storage offload, distributed trace correlation, and Splunk or ELK audit search, plus anti-patterns such as mutable audit fields and PII in logs. Use when implementing or reviewing financial audit logging."
 ---
 
 # Audit Trail Patterns

@@ -1,5 +1,6 @@
 ---
-description: "Identity verification, sanctions screening, AML monitoring, and regulatory filing workflows."
+description: "Build identity verification, sanctions screening, AML monitoring, or SAR and CTR filing workflows."
+argument-hint: "<verify|screen|monitor|file> [--customer-id <id>] [--risk-level <sdd|cdd|edd>] [--screen-lists <ofac,un,eu,uk,all>] [--transaction-id <id>] [--filing-type <sar|ctr>]"
 ---
 
 # /kyc-aml

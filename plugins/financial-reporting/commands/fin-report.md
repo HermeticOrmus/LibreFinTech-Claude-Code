@@ -1,5 +1,6 @@
 ---
-description: "Generate, validate, and export financial statements."
+description: "Generate, reconcile, validate, or export financial statements for a period, including XBRL output."
+argument-hint: "<generate|reconcile|export|validate> [--period <YYYY-MM>] [--entity <id>] [--framework <gaap|ifrs>] [--currency <ISO4217>] [--comparative] [--format <xbrl|ixbrl|csv|pdf>]"
 ---
 
 # /fin-report

@@ -1,7 +1,7 @@
 {
   "name": "lending-platforms",
   "version": "1.0.0",
-  "description": "Loan origination, credit scoring, servicing, collections",
+  "description": "Lending platform engineering: loan origination, credit decisioning, amortization and daily interest accrual, APR disclosure math, servicing, delinquency buckets, and collections workflows.",
   "author": {
     "name": "Diego Bodart",
     "url": "https://github.com/HermeticOrmus"
@@ -10,7 +10,11 @@
   "repository": "https://github.com/HermeticOrmus/LibreFinTech-Claude-Code",
   "license": "MIT",
   "keywords": [
+    "fintech",
     "lending",
-    "platforms"
+    "loans",
+    "amortization",
+    "credit-scoring",
+    "collections"
   ]
 }

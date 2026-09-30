@@ -1,7 +1,7 @@
 {
   "name": "pricing-engines",
   "version": "1.0.0",
-  "description": "Dynamic pricing, fee calculation, interest computation",
+  "description": "Financial pricing engines: fee and interest calculation with day-count conventions, Black-Scholes pricing and Greeks, volatility surfaces, insurance premium rating, dynamic pricing, and decimal precision.",
   "author": {
     "name": "Diego Bodart",
     "url": "https://github.com/HermeticOrmus"
@@ -10,7 +10,11 @@
   "repository": "https://github.com/HermeticOrmus/LibreFinTech-Claude-Code",
   "license": "MIT",
   "keywords": [
+    "fintech",
     "pricing",
-    "engines"
+    "interest",
+    "fees",
+    "derivatives",
+    "day-count"
   ]
 }

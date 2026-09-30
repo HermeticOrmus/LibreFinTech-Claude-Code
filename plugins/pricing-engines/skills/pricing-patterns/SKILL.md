@@ -1,6 +1,6 @@
 ---
-name: "pricing-patterns"
-description: "Domain-specific patterns for financial product pricing: fee calculation, interest computation, options pricing, and insurance premium rating."
+name: pricing-patterns
+description: "Pricing code: compound interest with correct day counts, implied volatility surface interpolation, fee audit trails, and Black-Scholes Greeks, plus anti-patterns such as floats for money. Use when implementing fee, interest, or derivatives pricing."
 ---
 
 # Pricing Engine Patterns

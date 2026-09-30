@@ -1,7 +1,7 @@
 {
   "name": "regulatory-compliance",
   "version": "1.0.0",
-  "description": "SOX, MiFID II, Dodd-Frank, regulatory reporting",
+  "description": "Compliance engineering for financial systems: SOX control evidence, MiFID II and Dodd-Frank reporting pipelines, GDPR retention, Basel III and BSA reporting, gap analysis, and monitoring feeds.",
   "author": {
     "name": "Diego Bodart",
     "url": "https://github.com/HermeticOrmus"
@@ -10,7 +10,11 @@
   "repository": "https://github.com/HermeticOrmus/LibreFinTech-Claude-Code",
   "license": "MIT",
   "keywords": [
-    "regulatory",
-    "compliance"
+    "fintech",
+    "compliance",
+    "regulatory-reporting",
+    "sox",
+    "mifid-ii",
+    "gdpr"
   ]
 }

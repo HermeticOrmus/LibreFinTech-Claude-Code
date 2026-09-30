@@ -1,6 +1,6 @@
 ---
-name: "ledger-design"
-description: "Reference patterns for financial ledger systems."
+name: ledger-design
+description: "Ledger library: double-entry and account-type rules, event patterns for payments, payouts, refunds, FX, and rounding, immutability and materialization strategies, multi-currency handling, and code for journal schemas, compensating corrections, optimistic-locked balances, and multi-currency entries. Use when designing or reviewing a ledger."
 ---
 
 # Ledger design pattern library

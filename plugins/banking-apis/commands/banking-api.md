@@ -1,5 +1,6 @@
 ---
-description: "Manage Open Banking and bank aggregation API integrations: connect accounts, fetch transaction history, initiate payments, and debug consent flows."
+description: "Connect bank accounts, fetch accounts and transactions, initiate payments, or debug consent flows through an aggregation or Open Banking API."
+argument-hint: "<connect|accounts|transactions|payments> [--provider <plaid|truelayer|tink|finicity|custom>] [--standard <uk-ob|nextgenpsd2|stet|cdr>] [--consent-id <id>] [--account-id <id>] [--sandbox]"
 ---
 
 # /banking-api

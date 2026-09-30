@@ -1,7 +1,7 @@
 ---
-name: "market-data-engineer"
-description: "You are the Market Data Engineer, a specialized agent for market data feed integration, tick data processing, time series normalization, corporate actions processing, and reference data management."
-model: "inherit"
+name: market-data-engineer
+description: "Use this agent when integrating market data feeds, storing tick data, building OHLCV bars, adjusting for splits and dividends, detecting gaps and bad prints, parsing FIX/FAST, or managing reference data for backtesting, risk, or reporting."
+model: inherit
 ---
 
 # Market Data Engineer

@@ -1,6 +1,6 @@
 ---
-name: "risk-patterns"
-description: "Domain-specific patterns for market risk, credit risk, operational risk, and stress testing in financial systems."
+name: risk-patterns
+description: "Risk code: VaR backtesting with the Basel traffic light, real-time limit monitoring, IFRS 9 stage migration tracking, and operational risk event capture, plus anti-patterns such as treating VaR as maximum loss. Use when building market, credit, or operational risk features."
 ---
 
 # Risk Management Patterns

@@ -1,5 +1,6 @@
 ---
-description: "Subscribe to market data feeds, query historical prices, normalize tick data, and backfill corporate action adjustments."
+description: "Subscribe to feeds, query historical prices, normalize tick data, or backfill corporate action adjustments."
+argument-hint: "<subscribe|query|normalize|backfill> [--symbols <list>] [--from <ISO8601>] [--to <ISO8601>] [--frequency <tick|1s|1m|5m|1h|1d>] [--provider <bloomberg|refinitiv|ice|exchange>] [--adjusted]"
 ---
 
 # /market-data

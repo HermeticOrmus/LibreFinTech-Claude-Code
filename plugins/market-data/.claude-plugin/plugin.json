@@ -1,7 +1,7 @@
 {
   "name": "market-data",
   "version": "1.0.0",
-  "description": "Market data feeds, tick data, OHLCV, normalization",
+  "description": "Market data engineering: feed integration, tick storage, OHLCV aggregation, corporate action adjustments, gap and outlier detection, FIX/FAST, and reference data.",
   "author": {
     "name": "Diego Bodart",
     "url": "https://github.com/HermeticOrmus"
@@ -10,7 +10,11 @@
   "repository": "https://github.com/HermeticOrmus/LibreFinTech-Claude-Code",
   "license": "MIT",
   "keywords": [
-    "market",
-    "data"
+    "fintech",
+    "market-data",
+    "tick-data",
+    "ohlcv",
+    "time-series",
+    "corporate-actions"
   ]
 }

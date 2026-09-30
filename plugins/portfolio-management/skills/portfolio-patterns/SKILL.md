@@ -1,6 +1,6 @@
 ---
-name: "portfolio-patterns"
-description: "Domain-specific patterns for portfolio construction, rebalancing, performance attribution, and GIPS-compliant reporting."
+name: portfolio-patterns
+description: "Portfolio code: mean-variance optimization with transaction costs, drift-threshold rebalancing, tax-loss harvesting with wash sale avoidance, HIFO lot selection, and cash drag management, plus anti-patterns such as look-ahead bias. Use when building portfolio or wealth management features."
 ---
 
 # Portfolio Management Patterns

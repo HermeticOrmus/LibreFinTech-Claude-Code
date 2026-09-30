@@ -1,7 +1,7 @@
 {
   "name": "banking-apis",
   "version": "1.0.0",
-  "description": "Open banking APIs, PSD2, account aggregation",
+  "description": "Bank API integration: aggregation and Open Banking providers (Plaid, TrueLayer, Tink, Finicity), OAuth consent flows, FAPI security, SCA, account and transaction data, and payment initiation.",
   "author": {
     "name": "Diego Bodart",
     "url": "https://github.com/HermeticOrmus"
@@ -10,7 +10,11 @@
   "repository": "https://github.com/HermeticOrmus/LibreFinTech-Claude-Code",
   "license": "MIT",
   "keywords": [
-    "banking",
-    "apis"
+    "fintech",
+    "banking-api",
+    "open-banking",
+    "plaid",
+    "psd2",
+    "oauth"
   ]
 }

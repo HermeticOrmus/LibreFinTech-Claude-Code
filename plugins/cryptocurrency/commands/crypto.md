@@ -1,5 +1,6 @@
 ---
-description: "Manage blockchain operations: wallet generation, transaction signing, smart contract deployment, and on-chain verification."
+description: "Generate a wallet, sign a transaction, deploy a contract, or verify on-chain state."
+argument-hint: "<wallet|sign|deploy|verify> [--network <mainnet|sepolia|polygon|arbitrum|bitcoin|signet>] [--path <derivation-path>] [--contract <address>] [--tx <hash>] [--gas-priority <low|medium|high|custom>]"
 ---
 
 # /crypto

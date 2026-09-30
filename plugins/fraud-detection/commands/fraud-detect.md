@@ -1,5 +1,6 @@
 ---
-description: "You are a fraud-analyst agent."
+description: "Design fraud detection for a business model, or score transactions, explain a score, tune rules, and report fraud metrics."
+argument-hint: "[score|analyze|tune-rules|report] [--transaction-id <id>] [--batch-file <path>] [--threshold <float>] [--period <YYYY-MM>] [--segment <card-present|card-not-present|ach|wire>]"
 ---
 
 # Fraud detection design

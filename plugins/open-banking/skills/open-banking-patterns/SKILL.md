@@ -1,6 +1,6 @@
 ---
-name: "open-banking-patterns"
-description: "Domain-specific patterns for Open Banking integrations, FAPI security, consent lifecycle management, and TPP infrastructure."
+name: open-banking-patterns
+description: "Open Banking code: the FAPI 1.0 Advanced authorization flow, consent persistence and renewal, and a consent event webhook handler, plus anti-patterns such as reused or unrevoked consents and plaintext tokens. Use when implementing TPP-side Open Banking flows."
 ---
 
 # Open Banking Patterns

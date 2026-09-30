@@ -1,5 +1,6 @@
 ---
-description: "Transaction reconciliation: match internal records against external statements, classify breaks, and generate exception reports."
+description: "Run a reconciliation, list and classify breaks, resolve them, or produce an exception report."
+argument-hint: "<run|breaks|resolve|report> [--account <id>] [--source <bank|custodian|stripe|adyen|exchange>] [--date <ISO8601>] [--tolerance <amount>] [--window <days>] [--format <mt940|camt053|csv>]"
 ---
 
 # /reconcile

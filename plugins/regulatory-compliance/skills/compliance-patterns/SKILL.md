@@ -1,6 +1,6 @@
 ---
-name: "compliance-patterns"
-description: "Domain-specific patterns for financial regulatory controls, reporting automation, monitoring, and audit evidence generation."
+name: compliance-patterns
+description: "Compliance engineering code: an idempotent regulatory reporting pipeline, SOX control test evidence capture, GDPR retention enforcement, and a monitoring dashboard feed, plus anti-patterns such as spreadsheet controls. Use when building regulatory reporting or control evidence systems."
 ---
 
 # Regulatory Compliance Patterns
