@@ -115,6 +115,23 @@ claude plugin marketplace add HermeticOrmus/LibreFinTech-Claude-Code
 claude plugin install payment-processing@libre-fintech
 ```
 
+### Install in Grok Build
+
+Grok Build reads the same plugin folders. Add the marketplace, then install any plugin by the name in the tables above:
+
+```bash
+grok plugin marketplace add HermeticOrmus/LibreFinTech-Claude-Code
+grok plugin install payment-processing@libre-fintech --trust
+```
+
+Grok asks you to trust a plugin before it installs it; `--trust` is that answer. To install one plugin straight from its folder, without the marketplace:
+
+```bash
+grok plugin install HermeticOrmus/LibreFinTech-Claude-Code#plugins/payment-processing --trust
+```
+
+From a clone, `./setup.sh --grok` installs every plugin into Grok Build, with the same `--only`, `--list`, and `--uninstall` options. `libre-fintech-hooks` uses a hook format Grok Build supports, but it has not been verified in a live Grok session yet.
+
 ### Install everything with setup.sh
 
 `setup.sh` registers your clone as the `libre-fintech` marketplace and installs every plugin through the Claude Code CLI. `./setup.sh --list` shows the plugins, `./setup.sh --only payment-processing,ledger-design,fraud-detection` installs a subset, and `./setup.sh --uninstall` removes them. It needs `claude` and `jq` on your `PATH`.
@@ -185,6 +202,7 @@ Starred this? Tell us what worked and what is missing: [open a feedback issue](h
 
 ## Contribute
 
+- Cracks we found and sealed: [LEDGER.md](LEDGER.md). The open rows are work anyone can pick up.
 - Pick up work from the [Menu](pantry/MENU.md): each item has a Done-when anyone can check. Open items are also [`[menu]` issues](https://github.com/HermeticOrmus/LibreFinTech-Claude-Code/issues?q=is%3Aopen+label%3Amenu), and starter tasks are under [good first issues](https://github.com/HermeticOrmus/LibreFinTech-Claude-Code/contribute).
 - Claude picked the wrong agent or skill? File a [routing miss](https://github.com/HermeticOrmus/LibreFinTech-Claude-Code/issues/new?template=routing-miss.yml).
 - Want a new plugin, agent, skill or command? Open a [plugin proposal](https://github.com/HermeticOrmus/LibreFinTech-Claude-Code/issues/new?template=plugin-proposal.yml), or tell us in a [feedback issue](https://github.com/HermeticOrmus/LibreFinTech-Claude-Code/issues/new?template=feedback.yml).
