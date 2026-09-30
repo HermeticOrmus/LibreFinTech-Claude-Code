@@ -44,6 +44,8 @@ cd LibreFinTech-Claude-Code
 ./setup.sh
 ```
 
+Before opening a PR, run `claude plugin validate .` and `claude plugin validate plugins/<plugin>` for each plugin you touched. CI runs the same checks and a clean install of every plugin. Agents live in `plugins/<plugin>/agents/<name>.md`, commands in `plugins/<plugin>/commands/<name>.md`, and skills in `plugins/<plugin>/skills/<name>/SKILL.md`, each with a frontmatter `description` that says when to use it.
+
 ## Branch + PR workflow
 
 ```

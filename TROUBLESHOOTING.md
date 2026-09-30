@@ -4,13 +4,19 @@ Common fintech failure modes the plugin agents help diagnose, plus general finte
 
 ## Plugin issues
 
-### Plugins copied but Claude Code doesn't see them
+### Plugins installed but Claude Code doesn't see them
 
 ```bash
-ls ~/.claude/plugins/ | grep -c '^libre-fintech-'
+claude plugin list | grep -c '@libre-fintech'
 ```
 
-Should print 20. If not, re-run `./setup.sh` and restart Claude Code.
+Should print 21 after a full `./setup.sh` run (20 plugins plus `libre-fintech-hooks`). If not, re-run `./setup.sh` and restart Claude Code; plugins load at session start. `claude plugin details <plugin>@libre-fintech` lists the agents, commands, and skills a plugin loaded.
+
+Before v1.0.0, `setup.sh` copied folders to `~/.claude/plugins/libre-fintech-*`. Claude Code does not load plugins from there. Install with the new `./setup.sh` (or `/plugin install <plugin>@libre-fintech`), then delete the old copies with `rm -rf ~/.claude/plugins/libre-fintech-*`.
+
+### Hooks do nothing
+
+`libre-fintech-hooks` reads its input with `jq`. Install `jq`, restart Claude Code, and run `/hooks` to confirm the SessionStart, PreToolUse, and PostToolUse entries are registered.
 
 ### Agent gives generic answers, not fintech-specific
 

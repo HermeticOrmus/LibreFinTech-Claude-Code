@@ -24,6 +24,16 @@ This is the smallest end-to-end payment flow that wouldn't embarrass you in prod
 
 ## 1. Install plugins
 
+Inside Claude Code:
+
+```
+/plugin marketplace add HermeticOrmus/LibreFinTech-Claude-Code
+/plugin install payment-processing@libre-fintech
+/plugin install ledger-design@libre-fintech
+```
+
+Or clone and install every plugin through the Claude Code CLI:
+
 ```bash
 git clone https://github.com/HermeticOrmus/LibreFinTech-Claude-Code.git ~/projects/LibreFinTech-Claude-Code
 cd ~/projects/LibreFinTech-Claude-Code
