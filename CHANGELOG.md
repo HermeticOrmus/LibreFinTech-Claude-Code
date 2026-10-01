@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased]
+## [1.1.0] - 2026-09-30
 
 ### Added
 - A public pantry in `pantry/`: a dated competitor map, X mine, people mine and pantry queue, every row cited, plus templates for the next run.
