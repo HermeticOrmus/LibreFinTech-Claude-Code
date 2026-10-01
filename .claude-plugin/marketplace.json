@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Financial technology development for Claude Code: payments, ledgers, reconciliation, fraud, compliance engineering, risk, trading, and lending. Engineering guidance, not financial, legal, or compliance advice.",
-    "version": "1.0.0"
+    "version": "1.1.0"
   },
   "plugins": [
     {
