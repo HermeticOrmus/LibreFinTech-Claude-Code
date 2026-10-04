@@ -63,7 +63,7 @@ claude plugin list
 unset CLAUDE_CONFIG_DIR
 ```
 
-`claude plugin details` lists the plugin's skills (its commands appear there too) and agents, so you can confirm a new one is picked up. CI (`.github/workflows/validate.yml`) runs the same validate and clean-install checks on every pull request. A second `grok` job checks that `.grok-plugin/marketplace.json` matches the Claude manifest, validates every plugin with `grok plugin validate`, and installs them into a clean Grok Build home; after you change `.claude-plugin/marketplace.json`, run `python3 scripts/sync-grok-manifest.py` and commit the file it writes. If this is your first contribution to the repo, GitHub holds that CI run until a maintainer approves it.
+`claude plugin details` lists the plugin's skills (its commands appear there too) and agents, so you can confirm a new one is picked up. CI (`.github/workflows/check.yml`, running `bash scripts/check.sh`) runs the same validate and clean-install checks on every pull request. The same script also checks that `.grok-plugin/marketplace.json` matches the Claude manifest, validates every plugin with `grok plugin validate`, and installs them into a clean Grok Build home; after you change `.claude-plugin/marketplace.json`, run `python3 scripts/sync-grok-manifest.py` and commit the file it writes. If this is your first contribution to the repo, GitHub holds that CI run until a maintainer approves it.
 
 ## What we welcome
 
